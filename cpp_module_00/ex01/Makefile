@@ -5,7 +5,7 @@ CC			=	g++
 CFLAGS		=	-Wall -Wextra -Werror
 
 SRCS		=	main.cpp \
-				Contact.cpp \
+				class/Contact/Contact.cpp \
 
 OBJS		=	$(SRCS:.cpp=.o)
 
