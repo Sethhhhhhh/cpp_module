@@ -2,7 +2,9 @@ NAME		=	account
 
 CC			=	clang++
 
-CFLAGS		=	-Wall -Wextra -Werror
+INC_DIR		=	.
+
+CFLAGS		=	-g -Wall -Wextra -Werror -std=c++98  $(addprefix -I , $(INC_DIR))
 
 SRCS		=	tests.cpp \
 				Account.cpp \
