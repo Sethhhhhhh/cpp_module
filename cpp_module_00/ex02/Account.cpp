@@ -2,7 +2,6 @@
 #include <iostream>
 #include <ctime>
 #include <chrono>
-#include <iomanip>
 
 /* Init static variables of Account class */
 
@@ -112,15 +111,16 @@ bool	Account::makeWithdrawal(int withdrawal)
 
 void	Account::_displayTimestamp(void)
 {
-	std::time_t now = std::chrono::system_clock::to_time_t(std::chrono::system_clock::now());
-
-    std::string s(30, '\0');
-    std::strftime(&s[0], s.size(), "%Y%m%d %H%M%S", std::localtime(&now));
+	std::time_t	now;
+	std::string	s(30, '\0');
+	
+	now = std::chrono::system_clock::to_time_t(std::chrono::system_clock::now());
+	std::strftime(&s[0], s.size(), "%Y%m%d %H%M%S", std::localtime(&now));
 	std::cout << "[" << s << "] ";
 }
 
 
-void	Account::displayAccountsInfos( void )
+void	Account::displayAccountsInfos(void)
 {
 	_displayTimestamp();
 	std::cout << "accounts:" << _nbAccounts
