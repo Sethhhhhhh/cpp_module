@@ -49,9 +49,18 @@ void    Contact::setup(size_t index)
 void    Contact::show_column(void)
 {
     std::cout << std::setw(10) << this->index << "|";
-	std::cout << std::setw(10) << this->first_name << "|";
-    std::cout << std::setw(10) << this->last_name << "|";
-    std::cout << std::setw(10) << this->nickname << "|";
+    if (this->first_name.size() > 10)
+        std::cout << std::setw(9) << this->first_name.substr(0, 9) << "." << "|";
+    else
+        std::cout << std::setw(10) << this->first_name << "|";
+    if (this->last_name.size() > 10)
+        std::cout << std::setw(9) << this->last_name.substr(0, 9) << "." << "|";
+    else
+        std::cout << std::setw(10) << this->last_name << "|";
+    if (this->nickname.size() > 10)
+        std::cout << std::setw(9) << this->nickname.substr(0, 9) << "." << "|";
+    else
+        std::cout << std::setw(10) << this->nickname << "|";
 }
 
 void    Contact::show(void)

@@ -1,4 +1,5 @@
 #include "class/Contact/Contact.hpp"
+#include <limits>
 
 void	show(Contact (&phonebook)[8])
 {
@@ -8,21 +9,26 @@ void	show(Contact (&phonebook)[8])
 
 	index = 0;
 	ret = false;
+	std::cout << std::endl;
 	std::cout << std::setw(10) << "index" << "|";
 	std::cout << std::setw(10) << "first name" << "|";
 	std::cout << std::setw(10) << "last name" << "|";
 	std::cout << std::setw(10) << "nickname" << std::endl;
-	
+
 	for (i = 0; phonebook[i].is_setup(); i++) {
 		phonebook[i].show_column();
 		std::cout << std::endl;
 	}
-	while (!ret || index < 1 || index > i) {
-		std::cout << std::endl << "Write the index of the contact you wish to inspect: ";
-		ret = !(std::cin >> index);
+	std::cout << std::endl << "Write the index of the contact you wish to inspect: ";
+	while (!(std::cin >> index) || index < 1 || index > i) {
+		std::cin.clear();
+		std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+		std::cout << "Bad input, please retry: ";
 	}
+	std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
 	std::cout << std::endl;
 	phonebook[(index - 1)].show();
+	std::cout << std::endl;
 }
 
 int main(void)
@@ -35,12 +41,19 @@ int main(void)
 	while (1) {
 		std::cout << "> ";
 		std::getline(std::cin, input);
-		if (!input.compare("ADD") && i < 8) {
-			phonebook[i].setup(i);
-			i++;
+		if (!input.compare("ADD")) {
+			if (i < 8) {
+				phonebook[i].setup(i);
+				i++;
+			}
+			else
+				std::cout << "Your contact list is full!" << std::endl;
 		}
 		else if (!input.compare("SEARCH")) {
-			show(phonebook);
+			if (i > 0)
+				show(phonebook);
+			else
+				std::cout << "No one is registered in your phonebook, please use the ADD command to register a contact!" << std::endl;
 		}
 		else if (!input.compare("EXIT"))
 			break;
