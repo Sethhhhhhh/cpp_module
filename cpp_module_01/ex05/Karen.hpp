@@ -7,7 +7,6 @@
 class Karen {
 
 private:
-	std::string const	levels[4] = {"DEBUG", "INFO", "WARNING", "ERROR"};
 	void	debug(void);
 	void	info(void);
 	void	warning(void);
@@ -18,6 +17,7 @@ public:
 	Karen();
 	~Karen();
 	void	complain(std::string level);
+	std::string const	levels[4] = {"DEBUG", "INFO", "WARNING", "ERROR"};
 
 };
 
