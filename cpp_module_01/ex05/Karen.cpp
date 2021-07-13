@@ -36,4 +36,5 @@ void    Karen::complain(std::string level) {
 		if (levels[i] == level)
 			(this->*f[i])();
 	}
+	return ;
 }
