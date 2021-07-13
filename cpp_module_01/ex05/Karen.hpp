@@ -7,10 +7,12 @@
 class Karen {
 
 private:
+	std::string const	levels[4] = {"DEBUG", "INFO", "WARNING", "ERROR"};
 	void	debug(void);
 	void	info(void);
 	void	warning(void);
 	void	error(void);
+	void	(Karen::*f[4])(void) = {&Karen::debug, &Karen::info, &Karen::warning, &Karen::error};
 
 public:
 	Karen();

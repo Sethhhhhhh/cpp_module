@@ -29,12 +29,9 @@ void    Karen::error(void) {
 }
 
 void    Karen::complain(std::string level) {
-	std::string	levels[4] = {"DEBUG", "INFO", "WARNING", "ERROR"};
-	void		(Karen::*f[4])(void) = {&Karen::debug, &Karen::info, &Karen::warning, &Karen::error};
-	
 	for (int i = 0; i < 4; i++) {
-		if (levels[i] == level)
-			(this->*f[i])();
+		if (this->levels[i] == level)
+			(this->*this->f[i])();
 	}
 	return ;
 }
