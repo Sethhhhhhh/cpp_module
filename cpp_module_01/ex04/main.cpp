@@ -1,7 +1,6 @@
 #include <iostream>
 #include <fstream>
 #include <string>
-#include <sstream>
 
 int	main(int ac, char const **av)
 {
