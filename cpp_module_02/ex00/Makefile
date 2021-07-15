@@ -1,4 +1,4 @@
-NAME		=	karenFilter
+NAME		=	berkeley
 
 CC			=	clang++
 
