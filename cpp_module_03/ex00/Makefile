@@ -1,4 +1,4 @@
-NAME		=	berkeley
+NAME		=	claptrap
 
 CC			=	clang++
 
@@ -7,7 +7,7 @@ INC_DIR		=	.
 CFLAGS		=	-g -Wall -Wextra -Werror -std=c++98  $(addprefix -I , $(INC_DIR))
 
 SRCS		=	main.cpp \
-				Fixed.cpp \
+				ClapTrap.cpp \
 
 OBJS		=	$(SRCS:.cpp=.o)
 
