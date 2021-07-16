@@ -26,7 +26,7 @@ ClapTrap & ClapTrap::operator=(ClapTrap const & src) {
 	this->_energy_points = src._energy_points;
 	
 	std::cout << "[COPY] ClapTrap " << _name << " spawn." << std::endl;
-
+	
 	return *this;
 }
 
