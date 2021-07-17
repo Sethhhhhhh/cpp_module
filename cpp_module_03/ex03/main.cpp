@@ -1,11 +1,10 @@
-#include "ScavTrap.hpp"
-#include "FragTrap.hpp"
+#include "DiamondTrap.hpp"
 
 int	main(void) {
 
-	ScavTrap	seth("seth");
-	ScavTrap	asta("asta");
-	FragTrap	deku("deku");
+	DiamondTrap	seth("seth");
+	DiamondTrap	asta("asta");
+	DiamondTrap	deku("deku");
 
 	std::cout << "------------------------------" << std::endl;
 
@@ -66,6 +65,12 @@ int	main(void) {
 	seth.guardGate();
 	asta.guardGate();
 	deku.highFivesGuys();
+
+	std::cout << "------------------------------" << std::endl;
+
+	seth.whoAmI();
+	asta.whoAmI();
+	deku.whoAmI();
 
 	std::cout << "------------------------------" << std::endl;
 

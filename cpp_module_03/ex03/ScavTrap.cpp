@@ -14,7 +14,7 @@ ScavTrap::ScavTrap(std::string name) {
 	_attack_damage = 20;
 	
 	std::cout << "[NAME] ScavTrap " << _name << " spawn." << std::endl;
-	
+
 	return ;
 }
 

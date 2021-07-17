@@ -7,20 +7,20 @@ DiamondTrap::DiamondTrap(void) {
 	return ;
 }
 
-DiamondTrap::DiamondTrap(std::string name) {
-	_name = name;
+DiamondTrap::DiamondTrap(std::string name) : ClapTrap(name + "_clap_name"), _name(name) {
 	_energy_points = ScavTrap::_energy_points;
 	_hit_points = FragTrap::_hit_points;
 	_attack_damage = FragTrap::_attack_damage;
 
 	std::cout << "[NAME] DiamondTrap " << _name << " spawn." << std::endl;
-	
+
 	return ;
 }
 
+
 DiamondTrap::DiamondTrap(DiamondTrap const & src) {
 	*this = src;
-	
+
 	std::cout << "[ASSIGNATION] DiamondTrap " << _name << " spawn." << std::endl;
 	
 	return ;
@@ -33,13 +33,24 @@ DiamondTrap & DiamondTrap::operator=(DiamondTrap const & src) {
 	_energy_points = src._energy_points;
 
 	std::cout << "[COPY] DiamondTrap " << _name << " spawn." << std::endl;
-	
+
 	return *this;
 }
 
 /* Destructor function */
 
+
 DiamondTrap::~DiamondTrap(void) {
 	std::cout << "DiamondTrap " << _name << " is dead." << std::endl;
 	return ;
+}
+
+unsigned int	DiamondTrap::attack(std::string const & target) {
+	std::cout << _name << ": This is ScavTrap attack!" << std::endl;
+	ScavTrap::attack(target);
+	return (ScavTrap::_attack_damage);
+}
+
+void	DiamondTrap::whoAmI(void) const {
+	std::cout << "My name is " << _name << " and my ClapTrap name is " << ClapTrap::_name << "." << std::endl;
 }

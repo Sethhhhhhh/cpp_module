@@ -5,12 +5,13 @@ CC			=	clang++
 
 INC_DIR		=	.
 
-CFLAGS		=	-g -Wall -Wextra -Werror -std=c++98  $(addprefix -I , $(INC_DIR))
+CFLAGS		=	-g -Wall -Wextra -Werror -std=c++98 -Wno-shadow -Wshadow $(addprefix -I , $(INC_DIR))
 
 SRCS		=	main.cpp \
 				ClapTrap.cpp \
 				ScavTrap.cpp \
 				FragTrap.cpp \
+				DiamondTrap.cpp \
 
 OBJS		=	$(SRCS:.cpp=.o)
 
