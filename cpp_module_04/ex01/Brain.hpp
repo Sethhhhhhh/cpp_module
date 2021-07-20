@@ -5,16 +5,18 @@
 
 class Brain {
 
+protected:
+	std::string _ideas[100];
+
 public:
-    Brain(void);
-    Brain(Brain const & src);
-    ~Brain();
+	Brain(void);
+	Brain(Brain const & src);
+	~Brain();
 
-    Brain & operator=(Brain const & src);
-    void    makeSound(void) const;
-    std::string getType(void) const;
+	Brain & operator=(Brain const & src);
 
-    std::string ideas[100];
+	void        setIdea(int const index, std::string idea);
+	std::string getIdea(int const index) const;
 };
 
 #endif

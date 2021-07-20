@@ -1,40 +1,41 @@
 #include "Animal.hpp"
 #include "Cat.hpp"
 #include "Dog.hpp"
-#include "WrongAnimal.hpp"
-#include "WrongCat.hpp"
 
 int main(void) {
-    const Animal*   animal = new Animal();
-    const Animal*   dog = new Dog();
-    const Animal*   cat = new Cat();
-    const WrongAnimal*   wrongAnimal = new WrongAnimal();
-    const WrongAnimal*   wrongCat = new WrongCat();
-
-    std::cout << "Dog type: " << dog->getType() << std::endl;
-    std::cout << "Cat type: " << cat->getType() << std::endl;
-    std::cout << "Animal type: " << animal->getType() << std::endl;
-    std::cout << "Wrong cat type: " << wrongCat->getType() << std::endl;
-    std::cout << "Wrong animal type: " << wrongAnimal->getType() << std::endl;
-
-    std::cout << std::endl;
+    const Animal*   i = new Dog();
+    const Animal*   j = new Cat();
+    
+    std::cout << "Dog type: " << i->getType() << std::endl;
+    std::cout << "Cat type: " << j->getType() << std::endl;    
 
     std::cout << "Dog sound: ";
-    dog->makeSound();
+    i->makeSound();
     std::cout << "Cat sound: ";
-    cat->makeSound();
-    std::cout << "Animal sound: ";
-    animal->makeSound();
-    std::cout << "Wrong cat sound: ";
-    wrongCat->makeSound();
-    std::cout << "Wrong animal sound: ";
-    wrongAnimal->makeSound();
+    j->makeSound();
 
-    delete  animal;
-    delete  dog;
-    delete  cat;
-    delete  wrongAnimal;
-    delete  wrongCat;
+    j->makeSound();
 
+    const Animal*   k = new Dog(*((Dog *)i));
+
+    std::cout << "Dog copy type: " << k->getType() << std::endl;
+    std::cout << "Dog copy sound: ";
+    k->makeSound();
+
+    const Animal*  animals[10];
+    for (size_t i = 0; i < 10; i++) {
+        if (i < 5)
+            animals[i] = new Cat();
+        else
+            animals[i] = new Dog();
+        animals[i]->makeSound();
+    }
+
+    delete j;
+    delete i;
+
+    for (size_t i = 0; i < 10; i++) {
+        delete animals[i];
+    }
     return (0);
 }
