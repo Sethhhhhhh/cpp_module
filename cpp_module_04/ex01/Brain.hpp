@@ -5,7 +5,7 @@
 
 class Brain {
 
-protected:
+private:
 	std::string _ideas[100];
 
 public:
@@ -15,8 +15,8 @@ public:
 
 	Brain & operator=(Brain const & src);
 
-	void        setIdea(int const index, std::string idea);
-	std::string getIdea(int const index) const;
+	void        setIdea(unsigned int index, std::string idea);
+	std::string getIdea(unsigned int index) const;
 };
 
 #endif

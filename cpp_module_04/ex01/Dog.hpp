@@ -19,6 +19,7 @@ public:
 	~Dog();
 
 	Dog & operator=(Dog const & src);
+	Brain &   getBrain(void) const;
 };
 
 #endif

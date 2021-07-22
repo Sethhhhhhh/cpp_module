@@ -16,18 +16,21 @@ int main(void) {
 
     j->makeSound();
 
-    const Animal*   k = new Dog(*((Dog *)i));
+    const Dog*   k = new Dog(*((Dog *)i));
 
     std::cout << "Dog copy type: " << k->getType() << std::endl;
     std::cout << "Dog copy sound: ";
     k->makeSound();
+    std::cout << "Idea #1: " << (k->getBrain()).getIdea(1) << std::endl;
 
-    const Animal*  animals[10];
+    Animal*  animals[10];
     for (size_t i = 0; i < 10; i++) {
-        if (i < 5)
+        if (i < 5) {
             animals[i] = new Cat();
-        else
+        }
+        else {
             animals[i] = new Dog();
+        }
         animals[i]->makeSound();
     }
 

@@ -1,4 +1,5 @@
 #include "Brain.hpp"
+#include <iostream>
 
 /* Constructor functions */
 
@@ -11,7 +12,7 @@ Brain::Brain(Brain const & src) {
 }
 
 Brain & Brain::operator=(Brain const & src) {
-    return *this;
+    return (*this);
 }
 
 /* Destructor function */
@@ -22,7 +23,8 @@ Brain::~Brain(void) {
 
 /* Member function(s) */
 
-void    Brain::setIdea(int const index, std::string idea) {
+void    Brain::setIdea(unsigned int index, std::string idea) {
+    // std::cout << idea << std::endl;
     if (index < 0 || index >= 100)
         return ;
     _ideas[index] = idea;
@@ -30,7 +32,7 @@ void    Brain::setIdea(int const index, std::string idea) {
     return ;
 }
 
-std::string Brain::getIdea(int const index) const {
+std::string Brain::getIdea(unsigned int index) const {
     if (index < 0 || index >= 100)
         return (_ideas[0]);
 

@@ -19,7 +19,7 @@ public:
 	~Cat();
 
 	Cat & operator=(Cat const & src);
-
+	Brain &   getBrain(void) const;
 };
 
 #endif

@@ -7,6 +7,9 @@ Dog::Dog(void) {
     _sound = "woof woof.";
 
     _brain = new Brain();
+    for (unsigned int i = 0; i < 100; i++) {
+        _brain->setIdea(i, "Idea #" + i);
+    }
     return ;
 }
 
@@ -31,4 +34,10 @@ Dog & Dog::operator=(Dog const & src) {
 Dog::~Dog(void) {
     delete _brain;
     return ;
+}
+
+/* Member function(s) */
+
+Brain &   Dog::getBrain(void) const {
+    return (*_brain);
 }

@@ -7,6 +7,10 @@ Cat::Cat(void) {
     _sound = "miaou.";
 
     _brain = new Brain();
+
+    for (unsigned int i = 0; i < 100; i++) {
+        _brain->setIdea(i, "idea #" + i);
+    }
     return ;
 }
 
@@ -31,4 +35,10 @@ Cat & Cat::operator=(Cat const & src) {
 Cat::~Cat(void) {
     delete _brain;
     return ;
+}
+
+/* Member function(s) */
+
+Brain &   Cat::getBrain(void) const {
+    return (*_brain);
 }
