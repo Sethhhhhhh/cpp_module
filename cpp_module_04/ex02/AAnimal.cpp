@@ -1,35 +1,35 @@
-#include "Animal.hpp"
+#include "AAnimal.hpp"
 
 /* Constructor functions */
 
-Animal::Animal(void) : _type("Animal"), _sound("...") {
+AAnimal::AAnimal(void) : _type("AAnimal"), _sound("...") {
     std::cout << "An animal has been created!" << std::endl;
     return ;
 }
 
-Animal::Animal(Animal const & src) {
+AAnimal::AAnimal(AAnimal const & src) {
     std::cout << "[ASSIGNATION] An animal has been created!" << std::endl;
     return ;
 }
 
-Animal & Animal::operator=(Animal const & src) {
+AAnimal & AAnimal::operator=(AAnimal const & src) {
     std::cout << "[COPY] An animal has been created!" << std::endl;
     return *this;
 }
 
 /* Destructor function */
 
-Animal::~Animal(void) {
-    std::cout << "An Animal died!" << std::endl;
+AAnimal::~AAnimal(void) {
+    std::cout << "An AAnimal died!" << std::endl;
     return ;
 }
 
 /* Member function(s) */
 
-void    Animal::makeSound(void) const {
+void    AAnimal::makeSound(void) const {
     std::cout << _sound << std::endl;
 }
 
-std::string Animal::getType(void) const {
+std::string AAnimal::getType(void) const {
     return (_type);
 }

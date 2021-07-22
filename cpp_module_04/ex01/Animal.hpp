@@ -12,11 +12,12 @@ protected:
 
 public:
     Animal(void);
-    Animal(Animal const & src);
-    ~Animal(void);
+	Animal(Animal const & src);
+	~Animal(void);
 
-    Animal & operator=(Animal const & src);
-    void    makeSound(void) const;
+	Animal &           operator=(Animal const & src);
+
+    void        makeSound(void) const;
     std::string getType(void) const;
 };
 
