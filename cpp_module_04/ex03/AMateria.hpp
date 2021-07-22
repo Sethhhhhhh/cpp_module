@@ -6,10 +6,8 @@
 
 class AMateria {
 
-private:
-    AMateria(void);
-
 protected:
+    AMateria(void);
     std::string _type;
 
 public:

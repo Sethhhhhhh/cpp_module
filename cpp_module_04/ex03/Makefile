@@ -8,6 +8,8 @@ CFLAGS		=	-g -Wall -Wextra -Werror -std=c++98 -Wno-shadow -Wshadow $(addprefix -
 
 SRCS		=	main.cpp \
 				AMateria.cpp \
+				Ice.cpp \
+				Cure.cpp \
 
 OBJS		=	$(SRCS:.cpp=.o)
 
