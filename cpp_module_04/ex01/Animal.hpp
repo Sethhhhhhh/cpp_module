@@ -13,7 +13,7 @@ protected:
 public:
     Animal(void);
     Animal(Animal const & src);
-    ~Animal();
+    ~Animal(void);
 
     Animal & operator=(Animal const & src);
     void    makeSound(void) const;

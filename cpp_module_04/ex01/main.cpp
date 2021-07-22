@@ -13,15 +13,14 @@ int main(void) {
     i->makeSound();
     std::cout << "Cat sound: ";
     j->makeSound();
-
-    j->makeSound();
+    (((Dog *)i)->getBrain()).setIdea(5, "This is another idea!");
 
     const Dog*   k = new Dog(*((Dog *)i));
 
     std::cout << "Dog copy type: " << k->getType() << std::endl;
     std::cout << "Dog copy sound: ";
     k->makeSound();
-    std::cout << "Idea #1: " << (k->getBrain()).getIdea(1) << std::endl;
+    std::cout << "Idea #5: " << (k->getBrain()).getIdea(5) << std::endl;
 
     Animal*  animals[10];
     for (size_t i = 0; i < 10; i++) {
@@ -34,6 +33,7 @@ int main(void) {
         animals[i]->makeSound();
     }
 
+    delete k;
     delete j;
     delete i;
 

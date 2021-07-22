@@ -17,6 +17,7 @@ Animal & Animal::operator=(Animal const & src) {
 /* Destructor function */
 
 Animal::~Animal(void) {
+    std::cout << "An animal died!" << std::endl;
     return ;
 }
 

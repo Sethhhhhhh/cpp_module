@@ -8,6 +8,10 @@ Brain::Brain(void) {
 }
 
 Brain::Brain(Brain const & src) {
+    for (unsigned int index = 0; index < 100; index++) {
+        _ideas[index] = src.getIdea(index);
+    }
+
     return ;
 }
 
@@ -24,7 +28,6 @@ Brain::~Brain(void) {
 /* Member function(s) */
 
 void    Brain::setIdea(unsigned int index, std::string idea) {
-    // std::cout << idea << std::endl;
     if (index < 0 || index >= 100)
         return ;
     _ideas[index] = idea;
@@ -35,6 +38,5 @@ void    Brain::setIdea(unsigned int index, std::string idea) {
 std::string Brain::getIdea(unsigned int index) const {
     if (index < 0 || index >= 100)
         return (_ideas[0]);
-
     return (_ideas[index]);
 }

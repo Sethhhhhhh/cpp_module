@@ -16,7 +16,7 @@ protected:
 public:
 	Cat(void);
 	Cat(Cat const & src);
-	~Cat();
+	~Cat(void);
 
 	Cat & operator=(Cat const & src);
 	Brain &   getBrain(void) const;

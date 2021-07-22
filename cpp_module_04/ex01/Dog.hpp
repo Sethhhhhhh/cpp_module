@@ -16,7 +16,7 @@ protected:
 public:
 	Dog(void);
 	Dog(Dog const & src);
-	~Dog();
+	~Dog(void);
 
 	Dog & operator=(Dog const & src);
 	Brain &   getBrain(void) const;
