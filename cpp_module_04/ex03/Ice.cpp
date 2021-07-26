@@ -6,12 +6,14 @@ Ice::Ice(void) {
 }
 
 Ice::Ice(Ice const & src) {
-    *this = src;
+    _type = src._type;
     return ;
 }
 
 Ice &  Ice::operator=(Ice const & src) {
-    return (*this);
+    _type = src._type;
+    
+	return (*this);
 }
 
 AMateria *  Ice::clone() const {

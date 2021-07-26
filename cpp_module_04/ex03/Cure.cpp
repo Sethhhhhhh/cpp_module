@@ -6,12 +6,15 @@ Cure::Cure(void) {
 }
 
 Cure::Cure(Cure const & src) {
-    *this = src;
-    return ;
+    _type = src._type;
+    
+	return ;
 }
 
 Cure &  Cure::operator=(Cure const & src) {
-    return (*this);
+    _type = src._type;
+    
+	return (*this);
 }
 
 AMateria *  Cure::clone() const {
