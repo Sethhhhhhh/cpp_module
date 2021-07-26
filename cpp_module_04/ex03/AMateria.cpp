@@ -26,3 +26,9 @@ AMateria &  AMateria::operator=(AMateria const & src) {
 std::string const & AMateria::getType() const {
     return (_type);
 }
+
+void	AMateria::use(ICharacter & target) {
+	std::cout << "Default: don't do anything to " << target.getName() << std::endl;
+
+	return ;	
+};
