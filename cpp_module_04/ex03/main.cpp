@@ -14,11 +14,19 @@ int main(void) {
 	seth->equip(cure);
 	seth->use(0, *deku);
 	seth->use(1, *deku);
-	seth->unequip(0);
-	seth->unequip(0);
+	
+	ICharacter *	asta = new Character(*((Character *)seth));
 
+	asta->use(0, *deku);
+	asta->use(1, *deku);
+
+	asta->unequip(0);
+	
+	asta->use(0, *deku);
+	
 	delete seth;
 	delete deku;
+	delete asta;
 
 	delete ice;
 	delete cure;
