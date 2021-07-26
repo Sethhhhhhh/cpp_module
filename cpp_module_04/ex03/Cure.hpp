@@ -9,12 +9,11 @@ class Cure : public AMateria {
 public:
     Cure(void);
     Cure(Cure const &);
-
     ~Cure(void);
 
-    Cure &              operator=(Cure const &);
-
-    virtual AMateria *  clone() const;
+    Cure &		operator=(Cure const &);
+    AMateria *  clone() const;
+	void		use(ICharacter & target);
 };
 
 #endif

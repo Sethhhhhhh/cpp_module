@@ -1,19 +1,25 @@
 #include "Character.hpp"
 
 Character::Character(void) : _name("no_name"), _index(0) {
+	for (unsigned int i = 0; i < 4; i++)
+		_stock[i] = nullptr;
+
 	return ;
 }
 
 Character::Character(std::string name) : _name(name),  _index(0) {
+	for (unsigned int i = 0; i < 4; i++)
+		_stock[i] = nullptr;
+
 	std::cout << "I'm alive !" << std::endl;
 	
 	return ;
 }
 
 Character::Character(Character const & src) {
-	std::cout << "I'm alive and I'm genetically altered !" << std::endl;
-	
 	_name = src.getName();
+	
+	std::cout << "I'm alive and I'm genetically altered !" << std::endl;
 	
 	return ;
 }
@@ -35,41 +41,37 @@ void	Character::equip(AMateria *m) {
 	}
 	_stock[_index] = m;
 	_index += 1;
+	std::cout << "New AMateria has been added to your stock." << std::endl;
 	
 	return ;
 }
 
 void	Character::unequip(int idx) {
-	if (_index < 0 || _index > 3) {
+	if (idx < 0 || idx > 3 || _stock[idx] == nullptr) {
 		std::cout << "The AMateria you want to unequip does not exist !" << std::endl;
 		return ;
 	}
 
 	for (unsigned int i = 0; i < 4; i++) {
-		if (i > _index)
+		if (i > idx)
 			_stock[i - 1] = _stock[i];
-		else if (i == _index)
+		else if (i == idx)
 			_stock[i] = nullptr;
 	}
 	_index -= 1;	
+	std::cout << "AMateria number " << idx << " has been removed to your stock." << std::endl;
 
 	return ;
 }
 
 void	Character::use(int idx, ICharacter & target)
 {
-	if (_index < 0 || _index > 3) {
-		std::cout << "The AMateria you want to unequip does not exist !" << std::endl;
+	if (idx < 0 || idx > 3 || _stock[idx] == nullptr) {
+		std::cout << "The AMateria you want to use does not exist !" << std::endl;
 		return ;
 	}
-	
-	_stock[_index]->use(target);
 
-	return ;
-}
+	_stock[idx]->use(target);
 
-void	Character::speak(void) const {
-	std::cout << "Hi, my name is " << _name << std::endl;
-	
 	return ;
 }
