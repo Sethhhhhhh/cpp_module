@@ -13,6 +13,10 @@ AMateria::AMateria(AMateria const & src) {
     return ;
 }
 
+AMateria::~AMateria(void) {
+	return ;
+}
+
 AMateria &  AMateria::operator=(AMateria const & src) {
     _type = src.getType();
 
