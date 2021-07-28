@@ -1,0 +1,19 @@
+#ifndef __MATERIA_SOURCE_HPP__
+#define __MATERIA_SOURCE_HPP__
+
+#include "IMateriaSource.hpp"
+
+class MateriaSource : public IMateriaSource {
+
+public:
+    MateriaSource(void);
+    MateriaSource(MateriaSource const &);
+    ~MateriaSource(void);
+
+    MateriaSource &		operator=(MateriaSource const &);
+	void				learnMateria(AMateria *);
+	AMateria *			createMateria(std::string const & type);
+
+};
+
+#endif
