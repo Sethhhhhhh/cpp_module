@@ -5,6 +5,9 @@
 
 class MateriaSource : public IMateriaSource {
 
+private:
+	AMateria *	_stock[4];
+
 public:
     MateriaSource(void);
     MateriaSource(MateriaSource const &);

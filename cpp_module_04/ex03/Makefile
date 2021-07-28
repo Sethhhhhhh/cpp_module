@@ -12,7 +12,7 @@ SRCS		=	main.cpp \
 				Cure.cpp \
 				Character.cpp \
 				MateriaSource.cpp \
-
+ 
 OBJS		=	$(SRCS:.cpp=.o)
 
 all			:	$(NAME)
