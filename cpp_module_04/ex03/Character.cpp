@@ -67,6 +67,10 @@ std::string const & Character::getName(void) const {
 }
 
 void	Character::equip(AMateria *m) {
+	if (m == nullptr) {
+		std::cout << "The AMateria is invalid !" << std::endl;
+		return ;
+	}
 	if (_index >= 3) {
 		std::cout << "You can't take more than 4 AMateria !" << std::endl;;
 		return ;

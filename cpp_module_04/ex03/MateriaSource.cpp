@@ -32,9 +32,14 @@ MateriaSource::~MateriaSource(void) {
 }
 
 void	MateriaSource::learnMateria(AMateria *m) {
+	if (m == nullptr) {
+		std::cout << "This AMateria is invalid ! " << std::endl;
+		return ;
+	}
 	for (unsigned int i = 0; i < 4; i++) {
 		if (_stock[i] == nullptr) {
 			_stock[i] = m;
+			std::cout << "OK" << std::endl;
 			break;
 		}
 	}
