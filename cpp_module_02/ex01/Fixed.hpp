@@ -10,7 +10,7 @@ public:
 	Fixed(void);
 	Fixed(int const n);
 	Fixed(float const f);
-	Fixed(Fixed const & src);
+	Fixed(Fixed const &);
 	~Fixed();
 
 	Fixed &	operator=(Fixed const & src);

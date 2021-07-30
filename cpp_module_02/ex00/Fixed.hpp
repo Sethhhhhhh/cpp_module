@@ -5,19 +5,19 @@
 
 class Fixed {
 
-public:
-	Fixed(void);
-	~Fixed();
-	Fixed(Fixed const & src);
+	public:
+		Fixed(void);
+		~Fixed();
+		Fixed(Fixed const & src);
 
-	Fixed &	operator=(Fixed const & src);
+		Fixed &	operator=(Fixed const & src);
 
-	int		getRawBits(void) const;
-	void	setRawBits(int const raw);
+		int		getRawBits(void) const;
+		void	setRawBits(int const raw);
 
-private:
-	int					_n;
-	static int const	_bits = 8;
+	private:
+		int					_n;
+		static int const	_bits = 8;
 
 };
 
