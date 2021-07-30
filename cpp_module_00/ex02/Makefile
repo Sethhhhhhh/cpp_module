@@ -1,20 +1,23 @@
 NAME		=	account
 
-CC			=	clang++
+CC			=	clang++ 
 
-INC_DIR		=	.
+HEADER		=	./includes
 
-CFLAGS		=	-g -Wall -Wextra -Werror -std=c++98  $(addprefix -I , $(INC_DIR))
+FLAGS		=	-W -Wall -Werror -I $(HEADER)
 
 SRCS		=	tests.cpp \
 				Account.cpp \
 
 OBJS		=	$(SRCS:.cpp=.o)
 
+.cpp.o 		:	
+				$(CC) $(FLAGS) -c $<
+
 all			:	$(NAME)
 
 $(NAME)		:	$(OBJS)
-				$(CC) $(CFLAGS) $(OBJS) -o $(NAME)
+				$(CC) $(FLAGS) $(OBJS) -o $(NAME)
 
 clean		:
 				rm -rf $(OBJS)

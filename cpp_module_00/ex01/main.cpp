@@ -1,4 +1,4 @@
-#include "class/Contact/Contact.hpp"
+#include "Contact.hpp"
 #include <limits>
 
 void	show(Contact (&phonebook)[8])
@@ -18,6 +18,7 @@ void	show(Contact (&phonebook)[8])
 	for (i = 0; phonebook[i].is_setup(); i++) {
 		phonebook[i].show_column();
 		std::cout << std::endl;
+		
 	}
 	std::cout << std::endl << "Write the index of the contact you wish to inspect: ";
 	while (!(std::cin >> index) || index < 1 || index > i) {

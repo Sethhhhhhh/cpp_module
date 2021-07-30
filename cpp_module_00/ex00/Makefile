@@ -1,8 +1,8 @@
 NAME		=	megaphone
 
-CC			=	g++ 
+CC			=	clang++ 
 
-CFLAGS		=	-Wall -Wextra -Werror
+CPPFLAGS	=	-W -Wall -Werror
 
 SRCS		=	megaphone.cpp
 
@@ -11,7 +11,7 @@ OBJS		=	$(SRCS:.cpp=.o)
 all			:	$(NAME)
 
 $(NAME)		:	$(OBJS)
-				$(CC) $(CFLAGS) $(OBJS) -o $(NAME)
+				$(CC) $(CPPFLAGS) $(OBJS) -o $(NAME)
 
 example		:	$(NAME)
 				./$(NAME) "shhhhh... I think the students are asleep..."
