@@ -17,7 +17,7 @@ int main(int ac, char **av)
     if (N <= 0) 
         return (s_error());
     zombie_horde = zombieHorde(N, "seth");
-    for (size_t i = 0; i < N; i++) {
+    for (int i = 0; i < N; i++) {
         zombie_horde[i].announce();
     }
     delete [] zombie_horde;
