@@ -5,17 +5,17 @@
 
 class MateriaSource : public IMateriaSource {
 
-private:
-	AMateria *	_stock[4];
+    private:
+        AMateria *	_stock[4];
 
-public:
-    MateriaSource(void);
-    MateriaSource(MateriaSource const &);
-    ~MateriaSource(void);
+    public:
+        MateriaSource(void);
+        MateriaSource(MateriaSource const &);
+        virtual ~MateriaSource(void);
 
-    MateriaSource &		operator=(MateriaSource const &);
-	void				learnMateria(AMateria *);
-	AMateria *			createMateria(std::string const & type);
+        MateriaSource &		operator=(MateriaSource const &);
+        void				learnMateria(AMateria *);
+        AMateria *			createMateria(std::string const & type);
 
 };
 

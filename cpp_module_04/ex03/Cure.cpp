@@ -5,10 +5,8 @@ Cure::Cure(void) {
     return ;
 }
 
-Cure::Cure(Cure const & src) {
-    _type = src._type;
-    
-	return ;
+Cure::~Cure(void) {
+    return ;
 }
 
 Cure &  Cure::operator=(Cure const & src) {
@@ -23,6 +21,6 @@ AMateria *  Cure::clone() const {
 }
 
 void	Cure::use(ICharacter & target) {
-	std::cout << "*heals  " << target.getName() << " wounds*" << std::endl;
+	std::cout << "* heals " << target.getName() << "'s wounds *" << std::endl;
 	return ;
 }

@@ -8,21 +8,21 @@ class ICharacter;
 
 class AMateria {
 
-protected:
-    AMateria(void);
-    std::string _type;
+    protected:
+        AMateria(void);
+        std::string _type;
 
-public:
-    AMateria(std::string const & type);
-    AMateria(AMateria const &);
+    public:
+        AMateria(std::string const & type);
+        AMateria(AMateria const &);
 
-    ~AMateria(void);
+        virtual ~AMateria(void);
 
-    AMateria &          operator=(AMateria const &);
+        AMateria &          operator=(AMateria const &);
 
-    std::string const & getType() const;
-    virtual AMateria *  clone() const = 0;
-    virtual void        use(ICharacter& target);
+        std::string const & getType() const;
+        virtual AMateria *  clone() const = 0;
+        virtual void        use(ICharacter& target);
 
 };
 

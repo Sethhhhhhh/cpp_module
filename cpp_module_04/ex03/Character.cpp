@@ -54,7 +54,12 @@ Character &	Character::operator=(Character const & src) {
 
 Character::~Character(void) {
 	std::cout << "Oh shit I'm dying !" << std::endl;
-	
+
+	for (int i = 0; i < 4; i++) {
+		if (_stock[i] != nullptr)
+			delete _stock[i];
+	}
+
 	return ;
 }
 
@@ -88,7 +93,7 @@ void	Character::unequip(int idx) {
 		return ;
 	}
 
-	for (unsigned int i = 0; i < 4; i++) {
+	for (int i = 0; i < 4; i++) {
 		if (i > idx)
 			_stock[i - 1] = _stock[i];
 		else if (i == idx)
