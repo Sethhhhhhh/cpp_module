@@ -1,4 +1,4 @@
-NAME		=	a.out
+NAME		=	bureaucrat
 
 CC			=	clang++
 
