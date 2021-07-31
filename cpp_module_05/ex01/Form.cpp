@@ -2,15 +2,15 @@
 
 Form::Form(std::string name, int gradeToSign, int gradeToExecute) : _name(name), _signed(false) {
     if (gradeToSign < 1)
-        throw GradeTooLowException();
-    else if (gradeToSign > 150)
         throw GradeTooHighException();
+    else if (gradeToSign > 150)
+        throw GradeTooLowException();
     _gradeToSign = gradeToSign;
 
     if (gradeToExecute < 1)
-        throw GradeTooLowException();
-    else if (gradeToExecute > 150)
         throw GradeTooHighException();
+    else if (gradeToExecute > 150)
+        throw GradeTooLowException();
     _gradeToExecute = gradeToExecute;
 
     return ;
