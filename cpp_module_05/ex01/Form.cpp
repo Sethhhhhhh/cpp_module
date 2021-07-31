@@ -1,16 +1,36 @@
 #include "Form.hpp"
 
-Form::Form(void) {
+Form::Form(std::string name, int gradeToSign, int gradeToExecute) : _name(name), _signed(false) {
+    if (gradeToSign < 1)
+        throw GradeTooLowException();
+    else if (gradeToSign > 150)
+        throw GradeTooHighException();
+    _gradeToSign = gradeToSign;
+
+    if (gradeToExecute < 1)
+        throw GradeTooLowException();
+    else if (gradeToExecute > 150)
+        throw GradeTooHighException();
+    _gradeToExecute = gradeToExecute;
+
     return ;
 }
 
 Form::Form(const Form & src) {
-    (void)src;
+    _name = src._name;
+    _signed = src._signed;
+    _gradeToSign = src._gradeToSign;
+    _gradeToExecute = src._gradeToExecute;
+
     return ;
 }
 
 Form &  Form::operator=(const Form & src) {
-    (void)src;
+    _name = src._name;
+    _signed = src._signed;
+    _gradeToSign = src._gradeToSign;
+    _gradeToExecute = src._gradeToExecute;
+
     return (*this);
 }
 
@@ -18,9 +38,27 @@ Form::~Form() {
     return ;
 }
 
+std::string Form::getName(void) const {
+    return (_name);
+}
+
+int Form::getGradeToSign(void) const {
+    return (_gradeToSign);
+}
+
+int Form::getGradeToExecute(void) const {
+    return (_gradeToExecute);
+}
+
+bool    Form::isSign(void) const {
+    return (_signed);
+}
+
 std::ostream &  operator<<(std::ostream & o, const Form & src) {
-    (void)src;
-    o << "yes!";
+    o << "name: " << src.getName()
+        << " signed: " << src.isSign()
+        << " grade to sign: " << src.getGradeToSign()
+        << " grade to execute: " << src.getGradeToExecute();
 
     return (o);
 }
