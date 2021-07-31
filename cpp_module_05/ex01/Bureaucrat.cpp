@@ -61,3 +61,14 @@ void    Bureaucrat::decrease(unsigned int amount) {
     _grade += amount;
     return ;
 }
+
+void    Bureaucrat::signForm(Form & src) {
+
+    src.beSigned(*this);
+    if (src.isSign()) {
+        std::cout << _name << " signs " << src.getName() << "." << std::endl;
+    }
+    else
+        std::cout << _name << " cannot sign because <reason>." << std::endl;
+    return ;
+}

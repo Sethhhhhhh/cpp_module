@@ -1,64 +1,71 @@
 #include "Form.hpp"
 
 Form::Form(std::string name, int gradeToSign, int gradeToExecute) : _name(name), _signed(false) {
-    if (gradeToSign < 1)
-        throw GradeTooHighException();
-    else if (gradeToSign > 150)
-        throw GradeTooLowException();
-    _gradeToSign = gradeToSign;
+	if (gradeToSign < 1)
+		throw GradeTooHighException();
+	else if (gradeToSign > 150)
+		throw GradeTooLowException();
+	_gradeToSign = gradeToSign;
 
-    if (gradeToExecute < 1)
-        throw GradeTooHighException();
-    else if (gradeToExecute > 150)
-        throw GradeTooLowException();
-    _gradeToExecute = gradeToExecute;
+	if (gradeToExecute < 1)
+		throw GradeTooHighException();
+	else if (gradeToExecute > 150)
+		throw GradeTooLowException();
+	_gradeToExecute = gradeToExecute;
 
-    return ;
+	return ;
 }
 
 Form::Form(const Form & src) {
-    _name = src._name;
-    _signed = src._signed;
-    _gradeToSign = src._gradeToSign;
-    _gradeToExecute = src._gradeToExecute;
+	_name = src._name;
+	_signed = src._signed;
+	_gradeToSign = src._gradeToSign;
+	_gradeToExecute = src._gradeToExecute;
 
-    return ;
+	return ;
 }
 
 Form &  Form::operator=(const Form & src) {
-    _name = src._name;
-    _signed = src._signed;
-    _gradeToSign = src._gradeToSign;
-    _gradeToExecute = src._gradeToExecute;
+	_name = src._name;
+	_signed = src._signed;
+	_gradeToSign = src._gradeToSign;
+	_gradeToExecute = src._gradeToExecute;
 
-    return (*this);
+	return (*this);
 }
 
 Form::~Form() {
-    return ;
+	return ;
 }
 
 std::string Form::getName(void) const {
-    return (_name);
+	return (_name);
 }
 
 int Form::getGradeToSign(void) const {
-    return (_gradeToSign);
+	return (_gradeToSign);
 }
 
 int Form::getGradeToExecute(void) const {
-    return (_gradeToExecute);
+	return (_gradeToExecute);
 }
 
 bool    Form::isSign(void) const {
-    return (_signed);
+	return (_signed);
+}
+
+void	Form::beSigned(const Bureaucrat & src) {
+	if (_gradeToSign > src.getGrade())
+		_signed = true;
+	else
+		throw GradeTooLowException();
 }
 
 std::ostream &  operator<<(std::ostream & o, const Form & src) {
-    o << "name: " << src.getName()
-        << " signed: " << src.isSign()
-        << " grade to sign: " << src.getGradeToSign()
-        << " grade to execute: " << src.getGradeToExecute();
+	o << "name: " << src.getName()
+		<< " signed: " << src.isSign()
+		<< " grade to sign: " << src.getGradeToSign()
+		<< " grade to execute: " << src.getGradeToExecute();
 
-    return (o);
+	return (o);
 }

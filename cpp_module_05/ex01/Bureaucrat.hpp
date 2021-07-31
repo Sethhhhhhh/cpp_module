@@ -3,8 +3,10 @@
 
 #include <string>
 #include <exception>
-
 #include <iostream>
+#include "Form.hpp"
+
+class Form;
 
 class Bureaucrat {
 
@@ -37,6 +39,7 @@ class Bureaucrat {
         std::string getName(void) const;
         void    increase(unsigned int amount);
         void    decrease(unsigned int amount);
+        void    signForm(Form & src);
 
 };
 
