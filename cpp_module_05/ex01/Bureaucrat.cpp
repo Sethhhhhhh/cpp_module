@@ -62,13 +62,14 @@ void    Bureaucrat::decrease(unsigned int amount) {
     return ;
 }
 
-void    Bureaucrat::signForm(Form & src) {
-
+void    Bureaucrat::signForm(Form & src) const {
+    /* Sign the form by self (this). */
     src.beSigned(*this);
-    if (src.isSign()) {
+
+    if (src.getSign()) {
         std::cout << _name << " signs " << src.getName() << "." << std::endl;
     }
     else
-        std::cout << _name << " cannot sign because <reason>." << std::endl;
+        std::cout << _name << " cannot sign because the grade of bureaucrat is too low." << std::endl;
     return ;
 }

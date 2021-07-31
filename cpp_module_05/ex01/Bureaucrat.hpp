@@ -39,7 +39,7 @@ class Bureaucrat {
         std::string getName(void) const;
         void    increase(unsigned int amount);
         void    decrease(unsigned int amount);
-        void    signForm(Form & src);
+        void    signForm(Form & src) const;
 
 };
 

@@ -50,7 +50,7 @@ int Form::getGradeToExecute(void) const {
 	return (_gradeToExecute);
 }
 
-bool    Form::isSign(void) const {
+bool    Form::getSign(void) const {
 	return (_signed);
 }
 
@@ -63,7 +63,7 @@ void	Form::beSigned(const Bureaucrat & src) {
 
 std::ostream &  operator<<(std::ostream & o, const Form & src) {
 	o << "name: " << src.getName()
-		<< " signed: " << src.isSign()
+	    << " signed: " << src.getSign()
 		<< " grade to sign: " << src.getGradeToSign()
 		<< " grade to execute: " << src.getGradeToExecute();
 
