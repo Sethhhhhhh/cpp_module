@@ -1,6 +1,10 @@
 #include "ShrubberyCreationForm.hpp"
 
-ShrubberyCreationForm::ShrubberyCreationForm(void) : Form("ShrubberyCreation", 145, 137) {
+ShrubberyCreationForm::ShrubberyCreationForm(void) : Form("ShrubberyCreationForm", 145, 137) {
+	return ;
+}
+
+ShrubberyCreationForm::ShrubberyCreationForm(const ShrubberyCreationForm & src) : Form(src) {
 	return ;
 }
 
