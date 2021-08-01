@@ -18,8 +18,11 @@ ScavTrap::ScavTrap(std::string name) {
 	return ;
 }
 
-ScavTrap::ScavTrap(ScavTrap const & src) {
-	*this = src;
+ScavTrap::ScavTrap(ScavTrap const & src) : ClapTrap(src) {
+	_name = src._name;
+	_hit_points = src._hit_points;
+	_attack_damage = src._attack_damage;
+	_energy_points = src._energy_points;
 	
 	std::cout << "[ASSIGNATION] ScavTrap " << _name << " spawn." << std::endl;
 	

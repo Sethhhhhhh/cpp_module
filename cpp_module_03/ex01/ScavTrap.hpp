@@ -5,7 +5,7 @@
 
 class ScavTrap : public ClapTrap {
 
-protected:
+private:
 	ScavTrap(void);
 
 public:

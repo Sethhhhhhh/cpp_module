@@ -1,5 +1,6 @@
 NAME		=	fragtrap
 
+
 CC			=	clang++
 
 INC_DIR		=	.

@@ -4,7 +4,7 @@ CC			=	clang++
 
 INC_DIR		=	.
 
-CPPFLAGS	=	-W -Wall -Werror
+CPPFLAGS	=	-W -Wall -Werrorw
 
 SRCS		=	main.cpp \
 				AMateria.cpp \

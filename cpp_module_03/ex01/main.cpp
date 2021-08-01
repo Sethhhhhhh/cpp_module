@@ -6,6 +6,8 @@ int	main(void) {
 	ScavTrap	asta("asta");
 	ScavTrap	deku("deku");
 
+	std::cout << "Yuno health: " << yuno.getHealth() << std::endl;
+
 	std::cout << "------------------------------" << std::endl;
 
 	/* Print default params */

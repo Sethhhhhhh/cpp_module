@@ -13,17 +13,19 @@ ClapTrap::ClapTrap(std::string name) : _name(name), _hit_points(10), _energy_poi
 }
 
 ClapTrap::ClapTrap(ClapTrap const & src) {
-	*this = src;
-	
+	_hit_points = src._hit_points;
+	_attack_damage = src._attack_damage;
+	_energy_points = src._energy_points;
+
 	std::cout << "[ASSIGNATION] ClapTrap " << _name << " spawn." << std::endl;
-	
+
 	return ;
 }
 
 ClapTrap & ClapTrap::operator=(ClapTrap const & src) {
-	this->_hit_points = src._hit_points;
-	this->_attack_damage = src._attack_damage;
-	this->_energy_points = src._energy_points;
+	_hit_points = src._hit_points;
+	_attack_damage = src._attack_damage;
+	_energy_points = src._energy_points;
 	
 	std::cout << "[COPY] ClapTrap " << _name << " spawn." << std::endl;
 	
@@ -51,7 +53,7 @@ unsigned int	ClapTrap::getAttackDamage(void) const {
 	return (_attack_damage);
 }
 
-void	ClapTrap::setAttackDamage(unsigned int amount) {
+void	ClapTrap::setAttackDamage(int amount) {
 	_attack_damage = amount;
 	return ;
 }
@@ -63,7 +65,7 @@ unsigned int	ClapTrap::attack(std::string const & target) {
 	return (_attack_damage);
 }
 
-void    ClapTrap::takeDamage(unsigned int amount) {
+void    ClapTrap::takeDamage(int amount) {
 	if (_hit_points < amount) {
 		_hit_points = 0;
 		std::cout << "ClapTrap " << _name << " is dead!" << std::endl;
@@ -75,7 +77,7 @@ void    ClapTrap::takeDamage(unsigned int amount) {
 	return ;
 }
 
-void    ClapTrap::beRepaired(unsigned int amount) {
+void    ClapTrap::beRepaired(int amount) {
 	if (_hit_points == 100) {
 		std::cout << "ClapTrap " << _name << " hit points are already at their maximum!" << std::endl;
 		return ;
