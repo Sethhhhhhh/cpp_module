@@ -16,3 +16,8 @@ ShrubberyCreationForm & ShrubberyCreationForm::operator=(const ShrubberyCreation
 	Form::operator=(src);
 	return (*this);
 }
+
+void ShrubberyCreationForm::execute(const Bureaucrat & executor) const {
+	std::cout << executor.getName() << " execute the action of " << getName() << "." << std::endl;
+	return ;
+}

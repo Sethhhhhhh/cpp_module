@@ -34,12 +34,12 @@ class Bureaucrat {
         Bureaucrat(const Bureaucrat &);
         ~Bureaucrat(void);
 
-        Bureaucrat & operator=(const Bureaucrat &);
-        int getGrade(void) const;
-        std::string getName(void) const;
-        void    increase(unsigned int amount);
-        void    decrease(unsigned int amount);
-        void    signForm(Form & src) const;
+        Bureaucrat &    operator=(const Bureaucrat &);
+        int             getGrade(void) const;
+        std::string     getName(void) const;
+        void            increase(unsigned int amount);
+        void            decrease(unsigned int amount);
+        void            signForm(Form & src) const;
 
 };
 
