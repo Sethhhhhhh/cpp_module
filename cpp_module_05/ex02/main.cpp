@@ -5,26 +5,28 @@
 
 int main(void) {
 
-	Bureaucrat              bob = Bureaucrat("bob", 100);
+	Bureaucrat              bob("bob", 26);
 
-	// TODO: Delete extra class.
-	ShrubberyCreationForm   a = ShrubberyCreationForm("target");
-	ShrubberyCreationForm   b = ShrubberyCreationForm(a);
+	ShrubberyCreationForm   a("target");
+	ShrubberyCreationForm   b(a);
 	ShrubberyCreationForm   c = b;
-	RobotomyRequestForm     d = RobotomyRequestForm("target");
-	PresidentialPardonForm  e = PresidentialPardonForm("target");
+	RobotomyRequestForm     d("target");
+	PresidentialPardonForm  e("target");
 
-	std::cout << d << std::endl;
-
-	std::cout << e << std::endl;
-
-	/* Try if the constructor(s) works perfectly. */
-	std::cout << a << std::endl;
-	std::cout << b << std::endl;
-	std::cout << c << std::endl;
+	std::cout << "a: " << a << std::endl;
+	std::cout << "b: " << b << std::endl;
+	std::cout << "c: " << c << std::endl;
+	std::cout << "d: " << d << std::endl;
+	std::cout << "e: " << e << std::endl;
 
 	/* Execute the action of form class. */
-	c.execute(bob);
+	try {
+		bob.signForm(e);
+		e.execute(bob);
+	}
+	catch(std::exception & e) {
+		std::cout << e.what() << std::endl;
+	}
 
     return (0);
 }

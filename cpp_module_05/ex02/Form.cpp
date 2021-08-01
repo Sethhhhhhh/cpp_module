@@ -87,6 +87,10 @@ std::ostream &  operator<<(std::ostream & o, const Form & src) {
 }
 
 void Form::execute(const Bureaucrat & executor) const {
-	std::cout << "Form execute ! " << executor.getName() << std::endl;
+	if (!_signed)
+		throw UnsignedForm();
+	else if (executor.getGrade() > _gradeToSign)
+		throw GradeTooLowException();
+
 	return ;
 }

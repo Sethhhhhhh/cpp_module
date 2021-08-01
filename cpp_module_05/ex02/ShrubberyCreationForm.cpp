@@ -14,11 +14,13 @@ ShrubberyCreationForm::~ShrubberyCreationForm(void) {
 
 ShrubberyCreationForm & ShrubberyCreationForm::operator=(const ShrubberyCreationForm & src) {
 	Form::operator=(src);
+
 	return (*this);
 }
 
 void ShrubberyCreationForm::execute(const Bureaucrat & executor) const {
 	Form::execute(executor);
 	std::cout << "ShrubberyCreationForm" << std::endl;
+
 	return ;
 }

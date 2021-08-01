@@ -40,6 +40,7 @@ class Bureaucrat {
         void            increase(unsigned int amount);
         void            decrease(unsigned int amount);
         void            signForm(Form & src) const;
+        void            executeForm(const Form &);
 
 };
 

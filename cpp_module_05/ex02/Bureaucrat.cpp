@@ -73,3 +73,10 @@ void    Bureaucrat::signForm(Form & src) const {
         std::cout << _name << " cannot sign because the grade of bureaucrat is too low." << std::endl;
     return ;
 }
+
+void    Bureaucrat::executeForm(const Form & src) {
+	src.execute(*this);
+	std::cout << getName() << " executs " << src.getName() << "." << std::endl;
+
+	return ;
+}

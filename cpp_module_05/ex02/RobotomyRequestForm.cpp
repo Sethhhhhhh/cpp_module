@@ -14,11 +14,13 @@ RobotomyRequestForm::~RobotomyRequestForm(void) {
 
 RobotomyRequestForm & RobotomyRequestForm::operator=(const RobotomyRequestForm & src) {
 	Form::operator=(src);
+
 	return (*this);
 }
 
 void RobotomyRequestForm::execute(const Bureaucrat & executor) const {
 	Form::execute(executor);
 	std::cout << "ShrubberyCreationForm" << std::endl;
+
 	return ;
 }

@@ -30,6 +30,12 @@ class Form {
 				return ("The grade is too low !");
 			}
 		};
+		class UnsignedForm : public std::exception {
+		public:
+			virtual const char* what() const throw() {
+				return ("The form is not signed !");
+			}
+		};
 
     public:
         Form(std::string, std::string, int, int);

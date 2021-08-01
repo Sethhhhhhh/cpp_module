@@ -15,11 +15,13 @@ PresidentialPardonForm::~PresidentialPardonForm(void) {
 
 PresidentialPardonForm & PresidentialPardonForm::operator=(const PresidentialPardonForm & src) {
 	Form::operator=(src);
+
 	return (*this);
 }
 
 void PresidentialPardonForm::execute(const Bureaucrat & executor) const {
 	Form::execute(executor);
-	std::cout << "ShrubberyCreationForm" << std::endl;
+	std::cout << getTarget() << " a été pardonnée par Zafod Beeblebrox." << std::endl;
+
 	return ;
 }
