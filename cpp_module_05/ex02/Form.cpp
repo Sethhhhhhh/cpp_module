@@ -1,6 +1,16 @@
 #include "Form.hpp"
 
-Form::Form(std::string name, int gradeToSign, int gradeToExecute) : _name(name), _signed(false) {
+Form::Form(void) {
+	_target = "null";
+	_name = "null";
+	return ;
+}
+
+Form::Form(std::string target, std::string name, int gradeToSign, int gradeToExecute) {
+	_name = name;
+	_target = target;
+	_signed = false;
+
 	if (gradeToSign < 1)
 		throw GradeTooHighException();
 	else if (gradeToSign > 150)
@@ -21,6 +31,7 @@ Form::Form(const Form & src) {
 	_signed = src._signed;
 	_gradeToSign = src._gradeToSign;
 	_gradeToExecute = src._gradeToExecute;
+	_target = src._target;
 
 	return ;
 }
@@ -30,6 +41,7 @@ Form &  Form::operator=(const Form & src) {
 	_signed = src._signed;
 	_gradeToSign = src._gradeToSign;
 	_gradeToExecute = src._gradeToExecute;
+	_target = src._target;
 
 	return (*this);
 }
@@ -61,6 +73,10 @@ void	Form::beSigned(const Bureaucrat & src) {
 		throw GradeTooLowException();
 }
 
+std::string Form::getTarget() const {
+	return (_target);
+}
+
 std::ostream &  operator<<(std::ostream & o, const Form & src) {
 	o << "name: " << src.getName()
 	    << " signed: " << src.getSign()
@@ -68,4 +84,9 @@ std::ostream &  operator<<(std::ostream & o, const Form & src) {
 		<< " grade to execute: " << src.getGradeToExecute();
 
 	return (o);
+}
+
+void Form::execute(const Bureaucrat & executor) const {
+	std::cout << "Form execute ! " << executor.getName() << std::endl;
+	return ;
 }

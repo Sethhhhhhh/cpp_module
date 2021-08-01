@@ -1,6 +1,6 @@
 #include "ShrubberyCreationForm.hpp"
 
-ShrubberyCreationForm::ShrubberyCreationForm(void) : Form("ShrubberyCreationForm", 145, 137) {
+ShrubberyCreationForm::ShrubberyCreationForm(std::string target) : Form(target, "ShrubberyCreationForm", 145, 137) {
 	return ;
 }
 
@@ -18,6 +18,7 @@ ShrubberyCreationForm & ShrubberyCreationForm::operator=(const ShrubberyCreation
 }
 
 void ShrubberyCreationForm::execute(const Bureaucrat & executor) const {
-	std::cout << executor.getName() << " execute the action of " << getName() << "." << std::endl;
+	Form::execute(executor);
+	std::cout << "ShrubberyCreationForm" << std::endl;
 	return ;
 }

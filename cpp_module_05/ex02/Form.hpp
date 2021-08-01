@@ -10,6 +10,7 @@ class Form {
 
     private:
         std::string _name;
+        std::string _target;
         bool        _signed;
         int         _gradeToSign;
         int         _gradeToExecute;
@@ -31,7 +32,7 @@ class Form {
 		};
 
     public:
-        Form(std::string name, int gradeToSign, int gradeToExecute);    
+        Form(std::string, std::string, int, int);
         Form(const Form &);
         ~Form(void);
 
@@ -41,6 +42,7 @@ class Form {
         int             getGradeToExecute(void) const;
         bool            getSign(void) const;
         void            beSigned(const Bureaucrat & src);
+        std::string     getTarget(void) const ;
 
         /* abstract method */
         virtual void    execute(const Bureaucrat & executor) const = 0;

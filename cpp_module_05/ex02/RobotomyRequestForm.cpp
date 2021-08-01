@@ -1,6 +1,6 @@
 #include "RobotomyRequestForm.hpp"
 
-RobotomyRequestForm::RobotomyRequestForm(void) : Form("RobotomyRequestForm", 72, 45) {
+RobotomyRequestForm::RobotomyRequestForm(std::string target) : Form(target, "RobotomyRequestForm", 72, 45) {
 	return ;
 }
 
@@ -18,6 +18,7 @@ RobotomyRequestForm & RobotomyRequestForm::operator=(const RobotomyRequestForm &
 }
 
 void RobotomyRequestForm::execute(const Bureaucrat & executor) const {
-	std::cout << executor.getName() << " execute the action of " << getName() << "." << std::endl;
+	Form::execute(executor);
+	std::cout << "ShrubberyCreationForm" << std::endl;
 	return ;
 }

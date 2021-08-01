@@ -8,11 +8,11 @@ int main(void) {
 	Bureaucrat              bob = Bureaucrat("bob", 100);
 
 	// TODO: Delete extra class.
-	ShrubberyCreationForm   a = ShrubberyCreationForm();
+	ShrubberyCreationForm   a = ShrubberyCreationForm("target");
 	ShrubberyCreationForm   b = ShrubberyCreationForm(a);
 	ShrubberyCreationForm   c = b;
-	RobotomyRequestForm     d = RobotomyRequestForm();
-	PresidentialPardonForm  e = PresidentialPardonForm();
+	RobotomyRequestForm     d = RobotomyRequestForm("target");
+	PresidentialPardonForm  e = PresidentialPardonForm("target");
 
 	std::cout << d << std::endl;
 

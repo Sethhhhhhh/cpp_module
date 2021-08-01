@@ -1,12 +1,13 @@
 #include "PresidentialPardonForm.hpp"
 
-PresidentialPardonForm::PresidentialPardonForm(void) : Form("PresidentialPardonForm", 25, 5) {
+PresidentialPardonForm::PresidentialPardonForm(std::string target) : Form(target, "PresidentialPardonForm", 25, 5) {
 	return ;
 }
 
 PresidentialPardonForm::PresidentialPardonForm(const PresidentialPardonForm & src) : Form(src) {
 	return ;
 }
+
 
 PresidentialPardonForm::~PresidentialPardonForm(void) {
 	return ;
@@ -18,6 +19,7 @@ PresidentialPardonForm & PresidentialPardonForm::operator=(const PresidentialPar
 }
 
 void PresidentialPardonForm::execute(const Bureaucrat & executor) const {
-	std::cout << executor.getName() << " execute the action of " << getName() << "." << std::endl;
+	Form::execute(executor);
+	std::cout << "ShrubberyCreationForm" << std::endl;
 	return ;
 }
