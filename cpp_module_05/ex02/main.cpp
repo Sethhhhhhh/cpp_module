@@ -5,7 +5,7 @@
 
 int main(void) {
 
-	Bureaucrat              bob("bob", 26);
+	Bureaucrat              bob("bob", 20);
 
 	ShrubberyCreationForm   a("target");
 	ShrubberyCreationForm   b(a);
@@ -22,7 +22,7 @@ int main(void) {
 	/* Execute the action of form class. */
 	try {
 		bob.signForm(e);
-		e.execute(bob);
+		bob.executeForm(e);
 	}
 	catch(std::exception & e) {
 		std::cout << e.what() << std::endl;
