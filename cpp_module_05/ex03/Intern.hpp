@@ -10,7 +10,7 @@
 class Intern {
 
 	private:
-		std::string   _funcNames[3] = {
+		const std::string   _funcNames[3] = {
 				"shrubbery creation",
 				"robotomy request",
 				"presidential pardon"

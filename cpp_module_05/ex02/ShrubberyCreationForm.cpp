@@ -19,8 +19,25 @@ ShrubberyCreationForm & ShrubberyCreationForm::operator=(const ShrubberyCreation
 }
 
 void ShrubberyCreationForm::execute(const Bureaucrat & executor) const {
-	Form::execute(executor);
-	std::cout << "ShrubberyCreationForm" << std::endl;
+	std::ofstream   f(getTarget() + "_shrubbery");
 
+	Form::execute(executor);
+
+	if (!f.is_open()) {
+		std::cout << "Cannot open the file." << std::endl;
+		return ;
+	}
+	f << "      /\\             \n"
+		 "     /\\*\\           \n"
+		 "    /\\O\\*\\         \n"
+		 "   /*/\\/\\/\\        \n"
+		 "  /\\O\\/\\*\\/\\     \n"
+		 " /\\*\\/\\*\\/\\/\\   \n"
+		 "/\\O\\/\\/*/\\/O/\\   \n"
+		 "      ||              \n"
+		 "      ||              \n"
+		 "      ||              \n";
+
+	f.close();
 	return ;
 }

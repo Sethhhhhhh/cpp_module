@@ -50,9 +50,7 @@ class Form {
         void            beSigned(const Bureaucrat & src);
         std::string     getTarget(void) const ;
 
-        /* abstract method */
         virtual void    execute(const Bureaucrat & executor) const = 0;
-        // TODO: make action function.
 };
 
 std::ostream &  operator<<(std::ostream &, const Form &);
