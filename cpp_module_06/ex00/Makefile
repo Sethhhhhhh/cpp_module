@@ -7,6 +7,7 @@ INC_DIR		=	.
 CPPFLAGS	=	-W -Wall -Werror
 
 SRCS		=	main.cpp \
+				Conversion.cpp \
 
 OBJS		=	$(SRCS:.cpp=.o)
 
