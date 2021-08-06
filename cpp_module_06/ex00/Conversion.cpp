@@ -21,57 +21,54 @@ Conversion &    Conversion::operator=(const Conversion & src) {
 }
 
 Conversion::operator char() const {
-	int n;
+	double   c;
 
-	n = 0;
+	c = 0;
 	try {
-		n = std::stoi(_s);
+		c = std::stod(_s);
+		std::cout << c;
 	}
-	catch (std::exception & e) {
+	catch(std::exception & e) {
 		std::cout << e.what() << std::endl;
 	}
-
-	return (n);
+	return (static_cast<char>(c));
 }
 
 Conversion::operator float() const {
-	float   f;
+	double   f;
 
 	f = 0;
 	try {
-		f = static_cast<float>(std::stof(_s));
+		f = std::stod(_s);
 	}
-	catch (std::exception & e) {
+	catch(std::exception & e) {
 		std::cout << e.what() << std::endl;
 	}
-
-	return (f);
+	return (static_cast<float>(f));
 }
 
 Conversion::operator double() const {
-	double d;
+	double   d;
 
 	d = 0;
 	try {
 		d = std::stod(_s);
 	}
-	catch (std::exception & e) {
+	catch(std::exception & e) {
 		std::cout << e.what() << std::endl;
 	}
-
 	return (d);
 }
 
 Conversion::operator int() const {
-	int n;
+	double   i;
 
-	n = 0;
+	i = 0;
 	try {
-		n = std::stoi(_s);
+		i = std::stod(_s);
 	}
-	catch (std::exception & e) {
+	catch(std::exception & e) {
 		std::cout << e.what() << std::endl;
 	}
-
-	return (n);
+	return (static_cast<int>(i));
 }

@@ -3,6 +3,8 @@
 
 #include <string>
 #include <iostream>
+#include <exception>
+#include <cctype>
 
 class Conversion {
 
@@ -22,6 +24,11 @@ public:
 	operator float() const;
 	operator double() const;
 	operator char() const;
+
+//	class LimitExeception : public std::exception {
+//		public:
+//
+//	};
 };
 
 #endif
