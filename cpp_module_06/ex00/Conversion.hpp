@@ -4,7 +4,7 @@
 #include <string>
 #include <iostream>
 #include <exception>
-#include <cctype>
+#include <limits>
 
 class Conversion {
 
@@ -25,10 +25,18 @@ public:
 	operator double() const;
 	operator char() const;
 
-//	class LimitExeception : public std::exception {
-//		public:
-//
-//	};
+	class Error : public std::exception {
+		public:
+			virtual const char * what() const throw() {
+				return ("Impossible");
+			}
+	};
+	class  NotDisplayable : public std::exception {
+		public:
+			virtual const char * what() const throw() {
+				return ("Non displayable");
+			}
+	};
 };
 
 #endif

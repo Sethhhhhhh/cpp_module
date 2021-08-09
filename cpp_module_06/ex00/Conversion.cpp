@@ -23,52 +23,37 @@ Conversion &    Conversion::operator=(const Conversion & src) {
 Conversion::operator char() const {
 	double   c;
 
-	c = 0;
-	try {
-		c = std::stod(_s);
-		std::cout << c;
-	}
-	catch(std::exception & e) {
-		std::cout << e.what() << std::endl;
-	}
+	if (!_s.compare("nanf") || !_s.compare("nan"))
+		throw Error();
+	c = std::stod(_s);
+	if (c < std::numeric_limits<int>::min() || c > std::numeric_limits<int>::max())
+		throw Error();
+	else if (c < 32 || c > 126)
+		throw NotDisplayable();
 	return (static_cast<char>(c));
 }
 
 Conversion::operator float() const {
 	double   f;
 
-	f = 0;
-	try {
-		f = std::stod(_s);
-	}
-	catch(std::exception & e) {
-		std::cout << e.what() << std::endl;
-	}
+	f = std::stod(_s);
 	return (static_cast<float>(f));
 }
 
 Conversion::operator double() const {
 	double   d;
 
-	d = 0;
-	try {
-		d = std::stod(_s);
-	}
-	catch(std::exception & e) {
-		std::cout << e.what() << std::endl;
-	}
+	d = std::stod(_s);
 	return (d);
 }
 
 Conversion::operator int() const {
 	double   i;
 
-	i = 0;
-	try {
-		i = std::stod(_s);
-	}
-	catch(std::exception & e) {
-		std::cout << e.what() << std::endl;
-	}
+	if (!_s.compare("nanf") || !_s.compare("nan"))
+		throw Error();
+	i = std::stod(_s);
+	if (i < std::numeric_limits<int>::min() || i > std::numeric_limits<int>::max())
+		throw Error();
 	return (static_cast<int>(i));
 }
