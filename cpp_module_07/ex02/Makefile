@@ -1,4 +1,4 @@
-NAME		=	type
+NAME		=	array
 
 CC			=	clang++
 
