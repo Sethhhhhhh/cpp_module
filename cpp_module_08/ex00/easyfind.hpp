@@ -1,8 +1,7 @@
 #ifndef __EASYFIND_HPP__
 #define __EASYFIND_HPP__
 
-#include <iostream>
-#include <vector>
+#include <stdexcept>
 #include <algorithm>
 
 template<typename T>
