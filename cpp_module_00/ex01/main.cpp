@@ -22,6 +22,9 @@ void	show(Contact (&phonebook)[8])
 	}
 	std::cout << std::endl << "Write the index of the contact you wish to inspect: ";
 	while (!(std::cin >> index) || index < 1 || index > i) {
+		if (std::cin.eof()) {
+			return ;
+		}
 		std::cin.clear();
 		std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
 		std::cout << "Bad input, please retry: ";
@@ -42,7 +45,9 @@ int main(void)
 	while (1) {
 		std::cout << "> ";
 		std::getline(std::cin, input);
-		if (!input.compare("ADD")) {
+		if (std::cin.eof())
+            break;
+		else if (!input.compare("ADD")) {
 			if (i < 8) {
 				phonebook[i].setup(i);
 				i++;
