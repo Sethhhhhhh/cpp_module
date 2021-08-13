@@ -1,3 +1,4 @@
+#include <cstdlib>
 #include "Zombie.hpp"
 
 int s_error(void)
@@ -13,7 +14,7 @@ int main(int ac, char **av)
 
     if (ac != 2)
         return (s_error());
-    N = atoi(av[1]);
+    N = std::atoi(av[1]);
     if (N <= 0) 
         return (s_error());
     zombie_horde = zombieHorde(N, "seth");

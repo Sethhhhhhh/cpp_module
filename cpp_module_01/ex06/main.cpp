@@ -11,7 +11,7 @@ int	main(int ac, char **av) {
 		return (1);
 	}
 	for (level = 0; level < 4; level++)
-		if (av[1] == karen.levels[level])
+		if (av[1] == karen.getLevel(level))
 			break ;
 	switch (level)
 	{
@@ -25,7 +25,7 @@ int	main(int ac, char **av) {
 			karen.complain("ERROR");
 			break;
 		default:
-			std::cout << "[ Probablement plainte de problèmes insignifiants ]" << std::endl;
+			std::cout << "[ Probably complaining about insignificant problems ]" << std::endl;
 			break;
 	}
 	return (0);

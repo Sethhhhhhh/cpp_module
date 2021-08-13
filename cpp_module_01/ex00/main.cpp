@@ -8,6 +8,6 @@ int main(void)
     zombie_in_heap->announce();
     delete zombie_in_heap;
 
-    randomChump("Reda");
+    randomChump("Deku");
     return (0);
 }

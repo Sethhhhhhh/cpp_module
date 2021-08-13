@@ -4,7 +4,7 @@ CC			=	clang++
 
 HEADER		=	./includes
 
-FLAGS		=	-W -Wall -Werror -I $(HEADER)
+FLAGS		=	-W -Wall -Werror -I $(HEADER) -std=c++98
 
 SRCS		=	main.cpp \
 				Zombie.cpp \
