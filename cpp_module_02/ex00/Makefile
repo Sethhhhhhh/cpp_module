@@ -2,7 +2,7 @@ NAME		=	berkeley
 
 CC			=	clang++ 
 
-HEADER		=	./includes
+HEADER		=	Fixed.hpp
 
 FLAGS		=	-W -Wall -Werror -I $(HEADER)
 
@@ -16,7 +16,7 @@ OBJS		=	$(SRCS:.cpp=.o)
 
 all			:	$(NAME)
 
-$(NAME)		:	$(OBJS)
+$(NAME)		:	$(OBJS) $(HEADER)
 				$(CC) $(FLAGS) $(OBJS) -o $(NAME)
 
 clean		:

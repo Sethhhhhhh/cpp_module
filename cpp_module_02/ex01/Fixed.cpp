@@ -12,14 +12,14 @@ Fixed::Fixed(int const n) : _n(n << _bits) {
 	return ;
 }
 
-Fixed::Fixed(float const f) : _n((int)roundf(f * (1 << _bits))) {
+Fixed::Fixed(float const f) : _n((int)round(f * (1 << _bits))) {
 	std::cout << "Float constructor called" << std::endl;
 	return ;
 }
 
 Fixed::Fixed(Fixed const & src) {
 	std::cout << "Copy constructor called" << std::endl;
-	*this = src; 
+	_n = src.getRawBits();
 	return;
 }
 
@@ -54,9 +54,8 @@ float	Fixed::toFloat(void) const {
 /* Operators functions */
 
 Fixed & Fixed::operator=(Fixed const & src) {
-	std::cout << "Assignation operator called" << std::endl;
-	this->_n = src.getRawBits();
-	return *this;
+	_n = src.getRawBits();
+	return (*this);
 }
 
 std::ostream &	operator<<(std::ostream & o, Fixed const & src) {

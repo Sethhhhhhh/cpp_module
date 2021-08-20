@@ -22,7 +22,7 @@ public:
 
 private:
 	int					_n;
-	static int const	_bits = 8;
+	static int const	_bits = 16;
 
 };
 
