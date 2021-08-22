@@ -12,7 +12,7 @@ FragTrap::FragTrap(std::string name) {
 	_hit_points = 100;
 	_energy_points = 100;
 	_attack_damage = 30;
-	
+
 	std::cout << "[NAME] FragTrap " << _name << " spawn." << std::endl;
 	
 	return ;

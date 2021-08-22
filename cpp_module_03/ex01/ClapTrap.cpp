@@ -53,7 +53,7 @@ unsigned int	ClapTrap::getAttackDamage(void) const {
 	return (_attack_damage);
 }
 
-void	ClapTrap::setAttackDamage(int amount) {
+void	ClapTrap::setAttackDamage(unsigned int amount) {
 	_attack_damage = amount;
 	return ;
 }
@@ -65,7 +65,7 @@ unsigned int	ClapTrap::attack(std::string const & target) {
 	return (_attack_damage);
 }
 
-void    ClapTrap::takeDamage(int amount) {
+void    ClapTrap::takeDamage(unsigned int amount) {
 	if (_hit_points < amount) {
 		_hit_points = 0;
 		std::cout << "ClapTrap " << _name << " is dead!" << std::endl;
@@ -77,7 +77,7 @@ void    ClapTrap::takeDamage(int amount) {
 	return ;
 }
 
-void    ClapTrap::beRepaired(int amount) {
+void    ClapTrap::beRepaired(unsigned int amount) {
 	if (_hit_points == 100) {
 		std::cout << "ClapTrap " << _name << " hit points are already at their maximum!" << std::endl;
 		return ;

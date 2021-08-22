@@ -7,22 +7,23 @@ DiamondTrap::DiamondTrap(void) {
 	return ;
 }
 
-DiamondTrap::DiamondTrap(std::string name) : ClapTrap(name + "_clap_name"), _name(name) {
-	_energy_points = ScavTrap::_energy_points;
-	_hit_points = FragTrap::_hit_points;
-	_attack_damage = FragTrap::_attack_damage;
+DiamondTrap::DiamondTrap(std::string name) : ClapTrap(name + "_clap_name"), ScavTrap(name), FragTrap(name), _name(name) {
+	_energy_points = 50;
+	_hit_points = 100;
+	_attack_damage = 30;
 
 	std::cout << "[NAME] DiamondTrap " << _name << " spawn." << std::endl;
 
 	return ;
 }
 
-
 DiamondTrap::DiamondTrap(DiamondTrap const & src) {
-	*this = src;
+	_energy_points = src._energy_points;
+	_hit_points = src._hit_points;
+	_attack_damage = src._attack_damage;
 
 	std::cout << "[ASSIGNATION] DiamondTrap " << _name << " spawn." << std::endl;
-	
+
 	return ;
 }
 
@@ -46,9 +47,9 @@ DiamondTrap::~DiamondTrap(void) {
 }
 
 unsigned int	DiamondTrap::attack(std::string const & target) {
-	std::cout << _name << ": This is ScavTrap attack!" << std::endl;
+	std::cout << _name << ": This is DiamondTrap attack!" << std::endl;
 	ScavTrap::attack(target);
-	return (ScavTrap::_attack_damage);
+	return (_attack_damage);
 }
 
 void	DiamondTrap::whoAmI(void) const {

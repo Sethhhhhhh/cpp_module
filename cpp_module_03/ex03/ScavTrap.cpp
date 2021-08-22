@@ -47,3 +47,8 @@ ScavTrap::~ScavTrap(void) {
 void	ScavTrap::guardGate(void) const {
 	std::cout << "ScavTrap has switched to doorkeeper mode !" << std::endl;
 }
+
+unsigned int	ScavTrap::attack(std::string const & target) {
+	std::cout << "ScavTrap " << _name << " attacks " << target << ", causing " << _attack_damage << " points of damage!" << std::endl;
+	return (_attack_damage);
+}
