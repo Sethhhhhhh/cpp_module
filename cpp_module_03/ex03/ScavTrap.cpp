@@ -3,7 +3,13 @@
 /* Constructor function(s) */
 
 ScavTrap::ScavTrap(void) {
+	_name = "ScavTrap";
+	_hit_points = 100;
+	_energy_points = 50;
+	_attack_damage = 20;
+
 	std::cout << "[DEFAULT] constructor called" << std::endl;
+
 	return ;
 }
 
@@ -14,12 +20,15 @@ ScavTrap::ScavTrap(std::string name) {
 	_attack_damage = 20;
 	
 	std::cout << "[NAME] ScavTrap " << _name << " spawn." << std::endl;
-
+	
 	return ;
 }
 
-ScavTrap::ScavTrap(ScavTrap const & src) {
-	*this = src;
+ScavTrap::ScavTrap(ScavTrap const & src) : ClapTrap(src) {
+	_name = src._name;
+	_hit_points = src._hit_points;
+	_attack_damage = src._attack_damage;
+	_energy_points = src._energy_points;
 	
 	std::cout << "[ASSIGNATION] ScavTrap " << _name << " spawn." << std::endl;
 	
@@ -48,7 +57,8 @@ void	ScavTrap::guardGate(void) const {
 	std::cout << "ScavTrap has switched to doorkeeper mode !" << std::endl;
 }
 
-unsigned int	ScavTrap::attack(std::string const & target) {
+void	ScavTrap::attack(const std::string & target) {
 	std::cout << "ScavTrap " << _name << " attacks " << target << ", causing " << _attack_damage << " points of damage!" << std::endl;
-	return (_attack_damage);
+
+	return ;
 }

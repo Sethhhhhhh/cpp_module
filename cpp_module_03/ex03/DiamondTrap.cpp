@@ -7,7 +7,8 @@ DiamondTrap::DiamondTrap(void) {
 	return ;
 }
 
-DiamondTrap::DiamondTrap(std::string name) : ClapTrap(name + "_clap_name"), ScavTrap(name), FragTrap(name), _name(name) {
+DiamondTrap::DiamondTrap(std::string name) : _name(name) {
+	ClapTrap::_name = name + "_clap_name";
 	_energy_points = 50;
 	_hit_points = 100;
 	_attack_damage = 30;
@@ -46,10 +47,11 @@ DiamondTrap::~DiamondTrap(void) {
 	return ;
 }
 
-unsigned int	DiamondTrap::attack(std::string const & target) {
+void	DiamondTrap::attack(std::string const & target) {
 	std::cout << _name << ": This is DiamondTrap attack!" << std::endl;
 	ScavTrap::attack(target);
-	return (_attack_damage);
+
+	return ;
 }
 
 void	DiamondTrap::whoAmI(void) const {

@@ -2,8 +2,8 @@
 
 /* Constructor function(s) */
 
-ClapTrap::ClapTrap(void) : _hit_points(0), _energy_points(0), _attack_damage(0) {
-	std::cout << "[DEFAULT] constructor called" << std::endl;
+ClapTrap::ClapTrap(void) : _name("null"), _hit_points(10), _energy_points(10), _attack_damage(0) {
+	std::cout << "[DEFAULT] ClapTrap constructor called" << std::endl;
 	return ;
 }
 
@@ -60,9 +60,10 @@ void	ClapTrap::setAttackDamage(unsigned int amount) {
 
 /* Usage functions */
 
-unsigned int	ClapTrap::attack(std::string const & target) {
+void	ClapTrap::attack(const std::string & target) {
 	std::cout << "ClapTrap " << _name << " attacks " << target << ", causing " << _attack_damage << " points of damage!" << std::endl;
-	return (_attack_damage);
+
+	return ;
 }
 
 void    ClapTrap::takeDamage(unsigned int amount) {

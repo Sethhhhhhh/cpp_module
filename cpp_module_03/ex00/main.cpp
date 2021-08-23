@@ -42,7 +42,8 @@ int	main(void) {
 
 	/* Seth take damage by Asta */
 
-	seth.takeDamage(asta.attack("seth"));
+	asta.attack("seth");
+	seth.takeDamage(asta.getAttackDamage());
 	std::cout << "Seth health: " << seth.getHealth() << std::endl;
 	
 	std::cout << "------------------------------" << std::endl;
@@ -56,7 +57,8 @@ int	main(void) {
 
 	/* Asta take damage by Deku */
 
-	asta.takeDamage(deku.attack("asta"));
+	deku.attack("seth");
+	seth.takeDamage(deku.getAttackDamage());
 	std::cout << "Asta health: " << asta.getHealth() << std::endl;
 
 	std::cout << "------------------------------" << std::endl;

@@ -12,9 +12,8 @@ protected:
 	unsigned int	_energy_points;
 	unsigned int	_attack_damage;
 
-	ClapTrap(void);
-
 public:
+	ClapTrap(void);
 	ClapTrap(std::string name);
 	ClapTrap(ClapTrap const &);
 	~ClapTrap();
@@ -24,10 +23,11 @@ public:
 	void    		takeDamage(unsigned int amount);
 	void    		beRepaired(unsigned int amount);
 	void			setAttackDamage(unsigned int amount);
-	unsigned int	attack(std::string const & target);
 	unsigned int	getEnergy(void) const;
 	unsigned int	getHealth(void) const;
 	unsigned int	getAttackDamage(void) const;
+	
+	virtual void	attack(const std::string & target);
 };
 
 #endif

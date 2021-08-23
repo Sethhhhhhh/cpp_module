@@ -20,13 +20,14 @@ public:
 
 	ClapTrap &	operator=(ClapTrap const & src);
 
-	void    				takeDamage(unsigned int amount);
-	void    				beRepaired(unsigned int amount);
-	void					setAttackDamage(unsigned int amount);
-	virtual unsigned int	attack(std::string const & target);
-	unsigned int			getEnergy(void) const;
-	unsigned int			getHealth(void) const;
-	unsigned int			getAttackDamage(void) const;
+	void    		takeDamage(unsigned int amount);
+	void    		beRepaired(unsigned int amount);
+	void			setAttackDamage(unsigned int amount);
+	unsigned int	getEnergy(void) const;
+	unsigned int	getHealth(void) const;
+	unsigned int	getAttackDamage(void) const;
+	
+	virtual void	attack(const std::string & target);
 };
 
 #endif

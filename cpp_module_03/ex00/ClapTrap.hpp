@@ -24,7 +24,7 @@ public:
 	void    		takeDamage(unsigned int amount);
 	void    		beRepaired(unsigned int amount);
 	void			setAttackDamage(unsigned int amount);
-	unsigned int	attack(std::string const & target);
+	void			attack(const std::string & target);
 	unsigned int	getEnergy(void) const;
 	unsigned int	getHealth(void) const;
 	unsigned int	getAttackDamage(void) const;

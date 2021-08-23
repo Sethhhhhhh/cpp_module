@@ -3,7 +3,12 @@
 /* Constructor function(s) */
 
 FragTrap::FragTrap(void) {
-	std::cout << "[DEFAULT] constructor called" << std::endl;
+	_name = "FragTrap";
+	_hit_points = 100;
+	_energy_points = 100;
+	_attack_damage = 30;
+
+	std::cout << "[DEFAULT] FragTrap constructor called" << std::endl;
 	return ;
 }
 
@@ -12,7 +17,7 @@ FragTrap::FragTrap(std::string name) {
 	_hit_points = 100;
 	_energy_points = 100;
 	_attack_damage = 30;
-
+	
 	std::cout << "[NAME] FragTrap " << _name << " spawn." << std::endl;
 	
 	return ;
@@ -46,4 +51,10 @@ FragTrap::~FragTrap(void) {
 
 void	FragTrap::highFivesGuys(void) const {
 	std::cout << _name << " high fives!" << std::endl;
+}
+
+void	FragTrap::attack(const std::string & target) {
+	std::cout << "FragTrap " << _name << " attacks " << target << ", causing " << _attack_damage << " points of damage!" << std::endl;
+
+	return ;
 }
