@@ -6,15 +6,13 @@
 
 class Dog : public Animal {
 
-protected:
-    std::string type;
-
 public:
     Dog(void);
     Dog(Dog const & src);
     ~Dog();
 
-    Dog & operator=(Dog const & src);
+    Dog &   operator=(Dog const & src);
+    void    makeSound(void) const;
 };
 
 #endif

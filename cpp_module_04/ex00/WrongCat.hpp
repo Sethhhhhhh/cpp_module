@@ -7,14 +7,15 @@
 class WrongCat : public WrongAnimal {
 
 protected:
-    std::string type;
+	std::string type;
 
 public:
-    WrongCat(void);
-    WrongCat(WrongCat const & src);
-    ~WrongCat();
+	WrongCat(void);
+	WrongCat(WrongCat const & src);
+	~WrongCat();
 
-    WrongCat & operator=(WrongCat const & src);
+	WrongCat &  operator=(WrongCat const & src);
+	void        makeSound(void) const;
 };
 
 #endif

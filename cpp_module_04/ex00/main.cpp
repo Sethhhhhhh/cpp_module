@@ -5,36 +5,53 @@
 #include "WrongCat.hpp"
 
 int main(void) {
-    const Animal*   animal = new Animal();
-    const Animal*   dog = new Dog();
-    const Animal*   cat = new Cat();
-    const WrongAnimal*   wrongAnimal = new WrongAnimal();
-    const WrongAnimal*   wrongCat = new WrongCat();
+	std::cout << std::endl << "----------- CREATE -----------" << std::endl;
 
-    std::cout << "Dog type: " << dog->getType() << std::endl;
-    std::cout << "Cat type: " << cat->getType() << std::endl;
-    std::cout << "Animal type: " << animal->getType() << std::endl;
-    std::cout << "Wrong cat type: " << wrongCat->getType() << std::endl;
-    std::cout << "Wrong animal type: " << wrongAnimal->getType() << std::endl;
+	Animal *		animal = new Animal();
+	Animal *		dog = new Dog();
+	Animal *		cat = new Cat();
+	WrongAnimal *	wrongAnimal = new WrongAnimal();
+	WrongAnimal *	wrongCat = new WrongCat();
 
-    std::cout << std::endl;
+	std::cout << std::endl << "----------- ANIMAL -----------" << std::endl;
 
-    std::cout << "Dog sound: ";
-    dog->makeSound();
-    std::cout << "Cat sound: ";
-    cat->makeSound();
-    std::cout << "Animal sound: ";
-    animal->makeSound();
-    std::cout << "Wrong cat sound: ";
-    wrongCat->makeSound();
-    std::cout << "Wrong animal sound: ";
-    wrongAnimal->makeSound();
+	std::cout << "Animal type: " << animal->getType() << std::endl;
+	std::cout << "Animal sound: ";
+	animal->makeSound();
 
-    delete  animal;
-    delete  dog;
-    delete  cat;
-    delete  wrongAnimal;
-    delete  wrongCat;
+	std::cout << std::endl << "------------ CAT -------------" << std::endl;
 
-    return (0);
+	std::cout << "Cat type: " << cat->getType() << std::endl;
+	std::cout << "Cat sound: ";
+	cat->makeSound();
+
+	std::cout << std::endl << "------------ DOG -------------" << std::endl;
+
+	std::cout << "Dog type: " << dog->getType() << std::endl;
+	std::cout << "Dog sound: ";
+	dog->makeSound();
+
+	std::cout << std::endl << "-------- WRONG ANIMAL --------" << std::endl;
+
+	std::cout << "Wrong animal type: " << wrongAnimal->getType() << std::endl;
+	std::cout << "Wrong animal sound: ";
+	wrongAnimal->makeSound();
+
+	std::cout << std::endl << "--------- WRONG CAT ----------" << std::endl;
+
+	std::cout << "Wrong cat type: " << wrongCat->getType() << std::endl;
+	std::cout << "Wrong cat sound: ";
+	wrongCat->makeSound();
+
+	std::cout << std::endl << "----------- DELETE -----------" << std::endl;
+
+	delete animal;
+	delete dog;
+	delete cat;
+	delete wrongAnimal;
+	delete wrongCat;
+
+	std::cout << std::endl;
+
+	return (0);
 }

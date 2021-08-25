@@ -8,16 +8,15 @@ class WrongAnimal {
 
 protected:
     std::string _type;
-    std::string _sound;
 
 public:
     WrongAnimal(void);
     WrongAnimal(WrongAnimal const & src);
     ~WrongAnimal();
 
-    WrongAnimal & operator=(WrongAnimal const & src);
-    void    makeSound(void) const;
-    std::string getType(void) const;
+    WrongAnimal &   operator=(WrongAnimal const & src);
+    std::string     getType(void) const;
+    void            makeSound(void) const;
 };
 
 #endif

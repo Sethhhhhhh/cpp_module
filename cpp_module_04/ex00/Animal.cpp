@@ -2,28 +2,36 @@
 
 /* Constructor functions */
 
-Animal::Animal(void) : _type("Animal"), _sound("...") {
+Animal::Animal(void) : _type("Animal") {
+    std::cout << "Animal class has been created." << std::endl;
+
     return ;
 }
 
 Animal::Animal(Animal const & src) {
+    _type = src._type;
+
     return ;
 }
 
 Animal & Animal::operator=(Animal const & src) {
-    return *this;
+    _type = src._type;
+
+    return (*this);
 }
 
 /* Destructor function */
 
 Animal::~Animal(void) {
+    std::cout << "Animal class has been delete." << std::endl;
+
     return ;
 }
 
 /* Member function(s) */
 
 void    Animal::makeSound(void) const {
-    std::cout << _sound << std::endl;
+    std::cout << "..." << std::endl;
 }
 
 std::string Animal::getType(void) const {

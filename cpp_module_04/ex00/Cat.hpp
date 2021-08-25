@@ -6,15 +6,13 @@
 
 class Cat : public Animal {
 
-protected:
-    std::string type;
-
 public:
     Cat(void);
     Cat(Cat const & src);
     ~Cat();
 
-    Cat & operator=(Cat const & src);
+    Cat &   operator=(Cat const & src);
+    void    makeSound(void) const;
 };
 
 #endif
