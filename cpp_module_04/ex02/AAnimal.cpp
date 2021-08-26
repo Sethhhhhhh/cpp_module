@@ -2,33 +2,36 @@
 
 /* Constructor functions */
 
-AAnimal::AAnimal(void) : _type("AAnimal"), _sound("...") {
-    std::cout << "An animal has been created!" << std::endl;
-    
+AAnimal::AAnimal(void) : _type("AAnimal") {
+    std::cout << "AAnimal class has been created." << std::endl;
+
     return ;
 }
 
 AAnimal::AAnimal(AAnimal const & src) {
-    std::cout << "[ASSIGNATION] An animal has been created!" << std::endl;
+    _type = src._type;
+
     return ;
 }
 
 AAnimal & AAnimal::operator=(AAnimal const & src) {
-    std::cout << "[COPY] An animal has been created!" << std::endl;
-    return *this;
+    _type = src._type;
+
+    return (*this);
 }
 
 /* Destructor function */
 
 AAnimal::~AAnimal(void) {
-    std::cout << "An AAnimal died!" << std::endl;
+    std::cout << "AAnimal class has been delete." << std::endl;
+
     return ;
 }
 
 /* Member function(s) */
 
 void    AAnimal::makeSound(void) const {
-    std::cout << _sound << std::endl;
+    std::cout << "..." << std::endl;
 }
 
 std::string AAnimal::getType(void) const {

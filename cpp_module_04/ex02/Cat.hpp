@@ -3,24 +3,20 @@
 
 #include "AAnimal.hpp"
 #include "Brain.hpp"
-#include <string>
 
 class Cat : public AAnimal {
 
 private:
-	Brain*	_brain;
-
-protected:
-	std::string type;
+    Brain * _brain;
 
 public:
-	Cat(void);
-	Cat(Cat const & src);
-	~Cat(void);
+    Cat(void);
+    Cat(Cat const & src);
+    ~Cat();
 
-	Cat &			operator=(Cat const & src);
-	Brain &			getBrain(void) const;
-	virtual void	makeSound(void) const;
+    Cat &   operator=(Cat const & src);
+    void    makeSound(void) const;
+    Brain & getBrain(void) const;
 };
 
 #endif

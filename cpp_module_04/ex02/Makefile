@@ -1,4 +1,4 @@
-NAME		=	abstract_class
+NAME		=	polymorphism
 
 CC			=	clang++
 
