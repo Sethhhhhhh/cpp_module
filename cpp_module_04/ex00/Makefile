@@ -1,10 +1,10 @@
 NAME		=	polymorphism
 
-CC			=	clang++
+CC			=	clang++ 
 
-INC_DIR		=	.
+HEADER		=	.
 
-CFLAGS		=	-g -Wall -Wextra -Werror -std=c++98 -Wno-shadow -Wshadow $(addprefix -I , $(INC_DIR))
+FLAGS		=	-Wall -Wextra -Werror -I $(HEADER) -std=c++98
 
 SRCS		=	main.cpp \
 				Animal.cpp \
@@ -15,14 +15,16 @@ SRCS		=	main.cpp \
 
 OBJS		=	$(SRCS:.cpp=.o)
 
+.cpp.o 		:	
+				$(CC) $(FLAGS) -c $<
+
 all			:	$(NAME)
 
-$(NAME)		:	$(OBJS)
-				$(CC) $(CFLAGS) $(OBJS) -o $(NAME)
+$(NAME)		:	$(OBJS) $(HEADER)
+				$(CC) $(FLAGS) $(OBJS) -o $(NAME)
 
 clean		:
 				rm -rf $(OBJS)
-
 
 fclean		:	clean
 				rm $(NAME)

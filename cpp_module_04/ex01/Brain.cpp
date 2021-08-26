@@ -3,7 +3,7 @@
 /* Constructor functions */
 
 Brain::Brain(void) {
-    srand (time(nullptr));
+    srand (time(NULL));
 
     for (unsigned int index = 0; index < 100; index++) {
         _ideas[index] = ((rand() % 9) + 48);

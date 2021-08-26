@@ -12,12 +12,22 @@ Dog::Dog(void) {
 }
 
 Dog::Dog(Dog const & src) {
+    std::cout << "Dog class has been created." << std::endl;
+
     _type = src._type;
+    _brain = new Brain(*src._brain);
+    _brain->printIdeas();
 
     return ;
 }
 
 Dog & Dog::operator=(Dog const & src) {
+    std::cout << "Dog class has been created." << std::endl;
+
+    _type = src._type;
+    _brain = new Brain(*src._brain);
+    _brain->printIdeas();
+
     return (*this);
 }
 
