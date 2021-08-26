@@ -2,7 +2,6 @@
 #define __CAT_HPP__
 
 #include "Animal.hpp"
-#include <string>
 
 class Cat : public Animal {
 

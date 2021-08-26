@@ -4,6 +4,7 @@
 
 AAnimal::AAnimal(void) : _type("AAnimal"), _sound("...") {
     std::cout << "An animal has been created!" << std::endl;
+    
     return ;
 }
 

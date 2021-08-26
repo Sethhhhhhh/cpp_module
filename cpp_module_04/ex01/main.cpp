@@ -3,42 +3,61 @@
 #include "Dog.hpp"
 
 int main(void) {
-    const Animal*   i = new Dog();
-    const Animal*   j = new Cat();
+    std::cout << std::endl << "----------- CREATE -----------" << std::endl;
+    Animal *    dog = new Dog();
+
+    Animal *    cat = new Cat();
+    static_cast<Cat *>(cat)->getBrain().setIdea(10, "salut");
     
-    std::cout << "Dog type: " << i->getType() << std::endl;
-    std::cout << "Cat type: " << j->getType() << std::endl;    
+    Animal *    deepCat = new Cat(*static_cast<Cat*>(cat));
+    static_cast<Cat *>(deepCat)->getBrain().setIdea(8, "lol");
 
-    std::cout << "Dog sound: ";
-    i->makeSound();
-    std::cout << "Cat sound: ";
-    j->makeSound();
-    (((Dog *)i)->getBrain()).setIdea(5, "This is another idea!");
+    std::cout << std::endl << "------------ CAT -------------" << std::endl;
 
-    const Dog*   k = new Dog(*((Dog *)i));
+	std::cout << "Cat type: " << cat->getType() << std::endl;
+	std::cout << "Cat sound: ";
+	cat->makeSound();
+    std::cout << "Cat idea #10: " << static_cast<Cat *>(cat)->getBrain().getIdea(10) << std::endl;
+    std::cout << "Cat idea #8: " << static_cast<Cat *>(cat)->getBrain().getIdea(8) << std::endl;
 
-    std::cout << "Dog copy type: " << k->getType() << std::endl;
-    std::cout << "Dog copy sound: ";
-    k->makeSound();
-    std::cout << "Idea #5: " << (k->getBrain()).getIdea(5) << std::endl;
+	std::cout << std::endl << "------------ DOG -------------" << std::endl;
 
-    Animal*  animals[10];
-    for (size_t i = 0; i < 10; i++) {
-        if (i < 5) {
-            animals[i] = new Cat();
-        }
-        else {
+	std::cout << "Dog type: " << dog->getType() << std::endl;
+	std::cout << "Dog sound: ";
+	dog->makeSound();
+
+    std::cout << std::endl << "---------- DEEP CAT ----------" << std::endl;
+
+	std::cout << "Deep cat type: " << deepCat->getType() << std::endl;
+	std::cout << "Deep cat sound: ";
+	deepCat->makeSound();
+    std::cout << "Deep cat idea #10: " << static_cast<Cat *>(deepCat)->getBrain().getIdea(10) << std::endl;
+    std::cout << "Deep cat idea #8: " << static_cast<Cat *>(deepCat)->getBrain().getIdea(8) << std::endl;
+
+
+    std::cout << std::endl;
+    Animal *    animals[10];
+    for (int i = 0; i < 10; i++) {
+        std::cout << "--------- ANIMAL " << i << " -----------" << std::endl;
+        if (i >= 5)
             animals[i] = new Dog();
-        }
+        else
+            animals[i] = new Cat();
         animals[i]->makeSound();
+        std::cout << std::endl;
     }
-
-    delete k;
-    delete j;
-    delete i;
-
-    for (size_t i = 0; i < 10; i++) {
+    std::cout << "---- DELETE ANIMALS ARRAY ----" << std::endl;
+    for (int i = 0; i < 10; i++) {
         delete animals[i];
     }
+    std::cout << std::endl;
+
+    std::cout << "-- DELETE CAT, DOG, DEEPCAT --" << std::endl;
+    delete dog;
+    delete cat;
+    delete deepCat;
+
+    std::cout << std::endl;
+
     return (0);
 }

@@ -3,23 +3,20 @@
 
 #include "Animal.hpp"
 #include "Brain.hpp"
-#include <string>
 
 class Dog : public Animal {
 
 private:
-	Brain*	_brain;
-
-protected:
-	std::string type;
+    Brain * _brain;
 
 public:
-	Dog(void);
-	Dog(Dog const & src);
-	~Dog(void);
+    Dog(void);
+    Dog(Dog const & src);
+    ~Dog();
 
-	Dog &			operator=(Dog const & src);
-	Brain &			getBrain(void) const;
+    Dog &   operator=(Dog const & src);
+    void    makeSound(void) const;
+    Brain & getBrain(void) const;
 };
 
 #endif
