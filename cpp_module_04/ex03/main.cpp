@@ -76,7 +76,9 @@ int main(void) {
 	seth.equip(anotherCure);
 
 	std::cout << std::endl << "--- UNEQUIP ---" << std::endl;
-	asta.unequip(0);
+	seth.unequip(0);
+	seth.equip(ice);
+	std::cout << std::endl;
 
 	return (0);
 }

@@ -57,7 +57,7 @@ Character &	Character::operator=(Character const & src) {
 Character::~Character(void) {
 	std::cout << "Oh shit I'm dying !" << std::endl;
 
-	for (int i = 0; i < 4; i++) {
+	for (unsigned int i = 0; i < _index; i++) {
 		if (_stock[i] != NULL)
 			delete _stock[i];
 	}
