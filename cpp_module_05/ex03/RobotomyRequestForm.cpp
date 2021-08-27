@@ -22,7 +22,7 @@ void RobotomyRequestForm::execute(const Bureaucrat & executor) const {
 	Form::execute(executor);
 
 	std::cout << "bruit de perceuse..." << std::endl;
-	std::srand(std::time(nullptr));
+	std::srand(std::time(NULL));
 	if (std::rand() % 2)
 		std::cout << getTarget() << " a bien été robotomizée." << std::endl;
 	else

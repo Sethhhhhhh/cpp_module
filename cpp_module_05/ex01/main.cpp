@@ -7,7 +7,7 @@ int main(void) {
 
     Form *      forms[4];
     for (unsigned int i = 0; i < 4; i++)
-    	forms[i] = nullptr;
+    	forms[i] = NULL;
 
     try {
         std::cout << bob << std::endl;
@@ -16,7 +16,9 @@ int main(void) {
         	unsigned int    signGrade (i == 0 ? 1 : i * 20);
         	unsigned int    execGrade = (i == 0 ? 5 : i * 27);
 
-        	forms[i] = new Form("form " + std::to_string(i), signGrade, execGrade);
+            std::string name = "form ";
+            name += i + 48;
+        	forms[i] = new Form(name, signGrade, execGrade);
             std::cout << *forms[i] << std::endl;
         }
 
@@ -30,7 +32,7 @@ int main(void) {
     }
 
     for (unsigned int i = 0; i < 4; i++) {
-    	if (forms[i] != nullptr)
+    	if (forms[i] != NULL)
             delete forms[i];
     }
 

@@ -1,6 +1,10 @@
 #include "Intern.hpp"
 
 Intern::Intern(void) {
+	_funcNames[0] = "shrubbery creation";
+	_funcNames[1] = "robotomy request";
+	_funcNames[2] = "presidential pardon";
+
 	return ;
 }
 
@@ -20,16 +24,21 @@ Intern &    Intern::operator=(const Intern & src) {
 
 Form *  Intern::makeForm(std::string name, std::string target) {
 	Form *  form;
+	Form *      (Intern::*f[3])(std::string) = {
+			&Intern::_makeShrubberyCreation,
+			&Intern::_makeRobotomyRequest,
+			&Intern::_makePresidentialPardon
+	};
 
 	for (unsigned int i = 0; i < 3; i++) {
 		if (!_funcNames[i].compare(name)) {
-			form = (this->*(_f[i]))(target);
+			form = (this->*(f[i]))(target);
 			std::cout << "Intern creates" << form->getName() << "." << std::endl;
 			return (form);
 		}
 	}
 	std::cerr << "The name of your form is not correct !" << std::endl;
-	return nullptr;
+	return NULL;
 }
 
 Form *  Intern::_makeShrubberyCreation(std::string target) {

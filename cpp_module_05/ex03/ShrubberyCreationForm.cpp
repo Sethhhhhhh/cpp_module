@@ -19,7 +19,8 @@ ShrubberyCreationForm & ShrubberyCreationForm::operator=(const ShrubberyCreation
 }
 
 void ShrubberyCreationForm::execute(const Bureaucrat & executor) const {
-	std::ofstream   f(getTarget() + "_shrubbery");
+	std::string		name = getTarget() + "_shrubbery";
+	std::ofstream   f(name.c_str());
 
 	Form::execute(executor);
 

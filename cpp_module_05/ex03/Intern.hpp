@@ -10,16 +10,7 @@
 class Intern {
 
 	private:
-		const std::string   _funcNames[3] = {
-				"shrubbery creation",
-				"robotomy request",
-				"presidential pardon"
-		};
-		Form *      (Intern::*_f[3])(std::string) = {
-				&Intern::_makeShrubberyCreation,
-				&Intern::_makeRobotomyRequest,
-				&Intern::_makePresidentialPardon
-		};
+		std::string	_funcNames[3];
 
 		Form *  _makeShrubberyCreation(std::string);
 		Form *  _makeRobotomyRequest(std::string);
