@@ -28,7 +28,7 @@ public:
 	class Error : public std::exception {
 		public:
 			virtual const char * what() const throw() {
-				return ("Impossible");
+				return ("impossible");
 			}
 	};
 	class  NotDisplayable : public std::exception {

@@ -18,6 +18,7 @@ int main(void) {
     uintptr_t   raw;
 
     data->i = 5;
+    std::cout << data->i << std::endl;
     std::cout << std::hex << data << std::endl;
     
     raw = serialize(data);
@@ -25,6 +26,8 @@ int main(void) {
 
     std::cout << data->i << std::endl;
     std::cout << std::hex << data << std::endl;
+
+    delete data;
 
     return (0);
 }

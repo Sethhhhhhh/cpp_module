@@ -15,7 +15,7 @@ int     main(int ac, char **av) {
 	try {
 		std::cout << "char: ";
 		char c = static_cast<char>(conv);
-		std::cout << c;
+		std::cout << "'" << c << "'";
 	}
 	catch (std::exception & e) {
 		std::cout << e.what();
