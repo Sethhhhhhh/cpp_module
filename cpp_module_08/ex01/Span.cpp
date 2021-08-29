@@ -41,6 +41,8 @@ void    Span::addNumber(const int n) {
 
 int     Span::shortestSpan(void) {
     int min;
+    if (_array.size() <= 1)
+        throw std::invalid_argument("There is no or only one value in the array!");
 
     min = abs(*std::max_element(_array.begin(), _array.end()) - *std::min_element(_array.begin(), _array.end()));
     for (std::vector<int>::iterator i = _array.begin(); i != _array.end(); i++) {
@@ -55,7 +57,7 @@ int     Span::shortestSpan(void) {
 
 int     Span::longestSpan(void) const {
     if (_array.size() <= 1)
-        throw std::invalid_argument("Value is already in array!");
+        throw std::invalid_argument("There is no or only one value in the array!");
     
     int min = *std::min_element(_array.begin(), _array.end());
     int max = *std::max_element(_array.begin(), _array.end());
