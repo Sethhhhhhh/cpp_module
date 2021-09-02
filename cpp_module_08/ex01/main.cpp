@@ -8,7 +8,7 @@ int randomNumber(void) {
 }
 
 int main(void) {
-    Span    span(5);
+    Span    span(10);
 
     std::srand(unsigned(std::time(0)));
 
@@ -21,18 +21,21 @@ int main(void) {
     }
 
     try {
-        std::vector<int>            array(10000);
+        std::vector<int>            array(5);
         std::vector<int>::iterator  start = array.begin();
         std::vector<int>::iterator  end = array.end();
-        
-        std::generate (start, end, randomNumber);
+        std::generate(start, end, randomNumber);
         span.addRange(start, end);
+        
+        std::vector<int>            newArray(5);
+        start = newArray.begin();
+        end = newArray.end();
+        std::generate(start, end, randomNumber);
+        span.addRange(start, end);
+
         std::cout << "-----------------" << std::endl;
-        while (start != end) {
-            std::cout << *start << " ";
-            start++;
-        }
-        std::cout << "\n-----------------" << std::endl;
+        std::cout << span << std::endl;        
+        std::cout << "-----------------" << std::endl;
     }
     catch (std::exception & e) {
         std::cout << e.what() << std::endl;

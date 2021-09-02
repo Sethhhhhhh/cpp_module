@@ -35,12 +35,13 @@ void    Span::addNumber(const int n) {
     std::vector<int>::iterator e = std::find(_array.begin(), _array.end(), n);
     if (e == _array.end())
         _array.push_back(n);
-    else
-        throw std::invalid_argument("Value is already in array!");
 }
 
 void    Span::addRange(std::vector<int>::iterator start, std::vector<int>::iterator end) {
     if (start != end) {
+        size_t dist = std::distance(start, end);
+        if ((dist + _array.size()) > _size)
+            throw std::invalid_argument("There is no more space to store this value!");
         _array.insert(_array.begin() + _array.size(), start, end);
     }
     return ;
