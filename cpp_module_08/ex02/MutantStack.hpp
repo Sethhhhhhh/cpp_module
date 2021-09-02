@@ -10,15 +10,13 @@ class MutantStack : public std::stack<T> {
         typedef typename    std::stack<T>::container_type::iterator iterator;
 
         MutantStack(void) {};
-        MutantStack(const MutantStack<T> & src) {
-            (void)src;
-        };
         ~MutantStack(void) {};
-
-        MutantStack &   operator=(const MutantStack<T> & src) {
-            (void)src;
+        MutantStack(const MutantStack & src) : std::stack<T>(src) {};
+        MutantStack<T> &   operator=(const MutantStack & src) {
+            std::stack<T>::operator=(src);
             return (*this);
         };
+
         iterator    begin(void) {
             return (this->c.begin());
         };

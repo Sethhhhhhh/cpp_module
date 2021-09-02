@@ -39,6 +39,13 @@ void    Span::addNumber(const int n) {
         throw std::invalid_argument("Value is already in array!");
 }
 
+void    Span::addRange(std::vector<int>::iterator start, std::vector<int>::iterator end) {
+    if (start != end) {
+        _array.insert(_array.begin() + _array.size(), start, end);
+    }
+    return ;
+}
+
 int     Span::shortestSpan(void) {
     int min;
     if (_array.size() <= 1)

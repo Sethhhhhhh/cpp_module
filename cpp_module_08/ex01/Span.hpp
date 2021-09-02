@@ -21,6 +21,7 @@ class Span {
 
         Span &              operator=(const Span &);
         void                addNumber(const int);
+        void                addRange(std::vector<int>::iterator, std::vector<int>::iterator);
         int                 shortestSpan(void);
         int                 longestSpan(void) const;
         std::vector<int> &  getArray(void);

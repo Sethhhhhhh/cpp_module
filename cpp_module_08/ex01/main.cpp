@@ -1,7 +1,16 @@
 #include "Span.hpp"
+#include <algorithm>
+#include <ctime>
+#include <cstdlib>
+
+int randomNumber(void) { 
+    return (std::rand() % 100);
+}
 
 int main(void) {
     Span    span(5);
+
+    std::srand(unsigned(std::time(0)));
 
     try {
         std::cout << span.shortestSpan() << std::endl;
@@ -12,12 +21,18 @@ int main(void) {
     }
 
     try {
-        span.addNumber(4);
-        span.addNumber(-2);
-        span.addNumber(8);
-        span.addNumber(11);
-        span.addNumber(9);
-        span.addNumber(24);
+        std::vector<int>            array(10000);
+        std::vector<int>::iterator  start = array.begin();
+        std::vector<int>::iterator  end = array.end();
+        
+        std::generate (start, end, randomNumber);
+        span.addRange(start, end);
+        std::cout << "-----------------" << std::endl;
+        while (start != end) {
+            std::cout << *start << " ";
+            start++;
+        }
+        std::cout << "\n-----------------" << std::endl;
     }
     catch (std::exception & e) {
         std::cout << e.what() << std::endl;

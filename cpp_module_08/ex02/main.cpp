@@ -47,8 +47,6 @@ int main(void) {
     std::cout << "top :\t" << list.back() << std::endl;
     std::cout << "size :\t" << list.size() << std::endl;
 
-
-
     std::cout << "\nMutantStack => [5, 3, 5, 737]" << std::endl;
     std::cout << "MutantStack iterator" << std::endl;
 
@@ -61,7 +59,6 @@ int main(void) {
         std::cout << *it << std::endl;
         ++it;
     }
-
 
     std::cout << "\nList => [5, 3, 5, 737]" << std::endl;
     std::cout << "List iterator" << std::endl;
@@ -77,19 +74,40 @@ int main(void) {
         ++lit;
     }
 
-    std::cout << "\nCopy Constructor" << std::endl;
-    std::stack<int> s(mstack);
- 
-    s.pop();
-    s.pop();
-    s.pop();
-    s.pop();
-    s.push(42);
- 
-    std::cout << "stack s top :\t\t\t" << s.top() << std::endl;
-    std::cout << "stack s size :\t\t\t" << s.size() << std::endl;
-    std::cout << "MutantStack mstack top :\t" << mstack.top() << std::endl;
-    std::cout << "MutantStack mstack size :\t" << mstack.size() << std::endl;
+    MutantStack<int>    s(mstack);
+    {
+        std::cout << "\nCopy Constructor" << std::endl;
 
+        std::cout << "\nMutantStack => [5, 3, 5, 737]" << std::endl;
+        std::cout << "MutantStack iterator" << std::endl;
+
+        MutantStack<int>::iterator it = s.begin();
+        MutantStack<int>::iterator ite = s.end();
+        
+        std::cout << "iterator it(begin) :\t" << *it << std::endl;
+        std::cout << "display all elements" << std::endl;
+        while (it != ite) {
+            std::cout << *it << std::endl;
+            ++it;
+        }
+    }
+
+    {
+        std::cout << "\nAssign Constructor" << std::endl;
+        MutantStack<int>    sCopy = s;
+
+        std::cout << "\nMutantStack => [5, 3, 5, 737]" << std::endl;
+        std::cout << "MutantStack iterator" << std::endl;
+
+        MutantStack<int>::iterator it = sCopy.begin();
+        MutantStack<int>::iterator ite = sCopy.end();
+        
+        std::cout << "iterator it(begin) :\t" << *it << std::endl;
+        std::cout << "display all elements" << std::endl;
+        while (it != ite) {
+            std::cout << *it << std::endl;
+            ++it;
+        }
+    }
 return 0;
 }
